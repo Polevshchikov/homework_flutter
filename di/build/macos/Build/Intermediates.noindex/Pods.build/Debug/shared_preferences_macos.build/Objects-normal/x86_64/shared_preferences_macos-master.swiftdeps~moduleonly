@@ -1,0 +1,5 @@
+version: "Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)"
+options: "00bd7ea4fbea839083e3ee92089bdb34"
+build_time: [1620022852, 340092000]
+inputs:
+  "/Users/pol/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences_macos-2.0.0/macos/Classes/SharedPreferencesPlugin.swift": [1613679550, 0]

@@ -1,0 +1,7 @@
+version: "Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)"
+options: "c3747887b48bbf3d21407befef59525e"
+build_time: [1620022880, 957091000]
+inputs:
+  "/Users/pol/Projects/Skillbox/di/macos/Runner/MainFlutterWindow.swift": [1614793080, 0]
+  "/Users/pol/Projects/Skillbox/di/macos/Runner/AppDelegate.swift": [1614793080, 0]
+  "/Users/pol/Projects/Skillbox/di/macos/Flutter/GeneratedPluginRegistrant.swift": [1620022825, 59894981]

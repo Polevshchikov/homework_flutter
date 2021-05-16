@@ -1,0 +1,678 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "ConnectivityPlugin"
+provides-nominal:
+- "18connectivity_macos18ConnectivityPluginC"
+provides-member:
+- ["18connectivity_macos18ConnectivityPluginC", ""]
+provides-dynamic-lookup:
+- "cwinterface"
+- "eventSink"
+- "handle"
+- "onCancel"
+- "onListen"
+- "reach"
+- "reachabilityChanged"
+- "register"
+- "statusFromReachability"
+depends-top-level:
+- !private "??"
+- "AssignmentPrecedence"
+- !private "BooleanLiteralType"
+- "CWInterface"
+- !private "CWWiFiClient"
+- "CastingPrecedence"
+- "ConnectivityPlugin"
+- "FlutterError"
+- !private "FlutterEventChannel"
+- "FlutterEventSink"
+- "FlutterMethodCall"
+- !private "FlutterMethodChannel"
+- !private "FlutterMethodNotImplemented"
+- "FlutterPlugin"
+- "FlutterPluginRegistrar"
+- "FlutterResult"
+- "FlutterStreamHandler"
+- "NSNotification"
+- "NSObject"
+- !private "NotificationCenter"
+- "Reachability"
+- "String"
+- !private "StringLiteralType"
+- !private "cwinterface"
+- !private "eventSink"
+- !private "getWifiIP"
+- !private "reach"
+- !private "reachabilityChanged"
+- !private "statusFromReachability"
+- !private "~="
+depends-member:
+- !private ["SK", ""]
+- !private ["s7CVarArgP", "CWWiFiClient"]
+- !private ["s7CVarArgP", "ConnectivityPlugin"]
+- !private ["s7CVarArgP", "FlutterEventChannel"]
+- !private ["s7CVarArgP", "FlutterMethodChannel"]
+- !private ["s7CVarArgP", "FlutterMethodNotImplemented"]
+- !private ["s7CVarArgP", "NSNotification"]
+- !private ["s7CVarArgP", "Name"]
+- !private ["s7CVarArgP", "NotificationCenter"]
+- !private ["s7CVarArgP", "Reachability"]
+- ["s7CVarArgP", ""]
+- !private ["s7CVarArgP", "addObserver"]
+- !private ["s7CVarArgP", "bssid"]
+- !private ["s7CVarArgP", "cwinterface"]
+- !private ["s7CVarArgP", "default"]
+- !private ["s7CVarArgP", "eventSink"]
+- !private ["s7CVarArgP", "forInternetConnection"]
+- !private ["s7CVarArgP", "getWifiIP"]
+- ["s7CVarArgP", "handle"]
+- ["s7CVarArgP", "handleMethodCall"]
+- !private ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "interface"]
+- !private ["s7CVarArgP", "isReachableViaWiFi"]
+- !private ["s7CVarArgP", "method"]
+- !private ["s7CVarArgP", "object"]
+- ["s7CVarArgP", "onCancel"]
+- ["s7CVarArgP", "onCancelWithArguments"]
+- ["s7CVarArgP", "onListen"]
+- ["s7CVarArgP", "onListenWithArguments"]
+- !private ["s7CVarArgP", "reach"]
+- !private ["s7CVarArgP", "reachabilityChanged"]
+- ["s7CVarArgP", "register"]
+- ["s7CVarArgP", "registerWithRegistrar"]
+- !private ["s7CVarArgP", "removeObserver"]
+- !private ["s7CVarArgP", "setStreamHandler"]
+- !private ["s7CVarArgP", "shared"]
+- !private ["s7CVarArgP", "ssid"]
+- !private ["s7CVarArgP", "startNotifier"]
+- !private ["s7CVarArgP", "statusFromReachability"]
+- !private ["s7CVarArgP", "stopNotifier"]
+- !private ["So11CWInterfaceC", "bssid"]
+- !private ["So11CWInterfaceC", "ssid"]
+- !private ["So12CWWiFiClientC", "interface"]
+- !private ["So12CWWiFiClientC", "shared"]
+- !private ["Sl", ""]
+- !private ["SL", ""]
+- ["18connectivity_macos18ConnectivityPluginC", "CWInterface"]
+- !private ["18connectivity_macos18ConnectivityPluginC", "CWWiFiClient"]
+- !private ["18connectivity_macos18ConnectivityPluginC", "ConnectivityPlugin"]
+- ["18connectivity_macos18ConnectivityPluginC", "FlutterError"]
+- !private ["18connectivity_macos18ConnectivityPluginC", "FlutterEventChannel"]
+- ["18connectivity_macos18ConnectivityPluginC", "FlutterEventSink"]
+- ["18connectivity_macos18ConnectivityPluginC", "FlutterMethodCall"]
+- !private ["18connectivity_macos18ConnectivityPluginC", "FlutterMethodChannel"]
+- !private ["18connectivity_macos18ConnectivityPluginC", "FlutterMethodNotImplemented"]
+- ["18connectivity_macos18ConnectivityPluginC", "FlutterPluginRegistrar"]
+- ["18connectivity_macos18ConnectivityPluginC", "FlutterResult"]
+- ["18connectivity_macos18ConnectivityPluginC", "NSNotification"]
+- !private ["18connectivity_macos18ConnectivityPluginC", "NotificationCenter"]
+- ["18connectivity_macos18ConnectivityPluginC", "Reachability"]
+- ["18connectivity_macos18ConnectivityPluginC", "String"]
+- ["18connectivity_macos18ConnectivityPluginC", ""]
+- ["18connectivity_macos18ConnectivityPluginC", "cwinterface"]
+- ["18connectivity_macos18ConnectivityPluginC", "deinit"]
+- ["18connectivity_macos18ConnectivityPluginC", "eventSink"]
+- !private ["18connectivity_macos18ConnectivityPluginC", "getWifiIP"]
+- ["18connectivity_macos18ConnectivityPluginC", "handle"]
+- ["18connectivity_macos18ConnectivityPluginC", "handleMethodCall"]
+- ["18connectivity_macos18ConnectivityPluginC", "init"]
+- ["18connectivity_macos18ConnectivityPluginC", "onCancel"]
+- ["18connectivity_macos18ConnectivityPluginC", "onCancelWithArguments"]
+- ["18connectivity_macos18ConnectivityPluginC", "onListen"]
+- ["18connectivity_macos18ConnectivityPluginC", "onListenWithArguments"]
+- ["18connectivity_macos18ConnectivityPluginC", "reach"]
+- !private ["18connectivity_macos18ConnectivityPluginC", "reachabilityChanged"]
+- ["18connectivity_macos18ConnectivityPluginC", "register"]
+- ["18connectivity_macos18ConnectivityPluginC", "registerWithRegistrar"]
+- !private ["18connectivity_macos18ConnectivityPluginC", "statusFromReachability"]
+- !private ["s28CustomDebugStringConvertibleP", "CWWiFiClient"]
+- !private ["s28CustomDebugStringConvertibleP", "ConnectivityPlugin"]
+- !private ["s28CustomDebugStringConvertibleP", "FlutterEventChannel"]
+- !private ["s28CustomDebugStringConvertibleP", "FlutterMethodChannel"]
+- !private ["s28CustomDebugStringConvertibleP", "FlutterMethodNotImplemented"]
+- !private ["s28CustomDebugStringConvertibleP", "NSNotification"]
+- !private ["s28CustomDebugStringConvertibleP", "Name"]
+- !private ["s28CustomDebugStringConvertibleP", "NotificationCenter"]
+- !private ["s28CustomDebugStringConvertibleP", "Reachability"]
+- ["s28CustomDebugStringConvertibleP", ""]
+- !private ["s28CustomDebugStringConvertibleP", "addObserver"]
+- !private ["s28CustomDebugStringConvertibleP", "bssid"]
+- !private ["s28CustomDebugStringConvertibleP", "cwinterface"]
+- !private ["s28CustomDebugStringConvertibleP", "default"]
+- !private ["s28CustomDebugStringConvertibleP", "eventSink"]
+- !private ["s28CustomDebugStringConvertibleP", "forInternetConnection"]
+- !private ["s28CustomDebugStringConvertibleP", "getWifiIP"]
+- ["s28CustomDebugStringConvertibleP", "handle"]
+- ["s28CustomDebugStringConvertibleP", "handleMethodCall"]
+- !private ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "interface"]
+- !private ["s28CustomDebugStringConvertibleP", "isReachableViaWiFi"]
+- !private ["s28CustomDebugStringConvertibleP", "method"]
+- !private ["s28CustomDebugStringConvertibleP", "object"]
+- ["s28CustomDebugStringConvertibleP", "onCancel"]
+- ["s28CustomDebugStringConvertibleP", "onCancelWithArguments"]
+- ["s28CustomDebugStringConvertibleP", "onListen"]
+- ["s28CustomDebugStringConvertibleP", "onListenWithArguments"]
+- !private ["s28CustomDebugStringConvertibleP", "reach"]
+- !private ["s28CustomDebugStringConvertibleP", "reachabilityChanged"]
+- ["s28CustomDebugStringConvertibleP", "register"]
+- ["s28CustomDebugStringConvertibleP", "registerWithRegistrar"]
+- !private ["s28CustomDebugStringConvertibleP", "removeObserver"]
+- !private ["s28CustomDebugStringConvertibleP", "setStreamHandler"]
+- !private ["s28CustomDebugStringConvertibleP", "shared"]
+- !private ["s28CustomDebugStringConvertibleP", "ssid"]
+- !private ["s28CustomDebugStringConvertibleP", "startNotifier"]
+- !private ["s28CustomDebugStringConvertibleP", "statusFromReachability"]
+- !private ["s28CustomDebugStringConvertibleP", "stopNotifier"]
+- !private ["s23CustomStringConvertibleP", "CWWiFiClient"]
+- !private ["s23CustomStringConvertibleP", "ConnectivityPlugin"]
+- !private ["s23CustomStringConvertibleP", "FlutterEventChannel"]
+- !private ["s23CustomStringConvertibleP", "FlutterMethodChannel"]
+- !private ["s23CustomStringConvertibleP", "FlutterMethodNotImplemented"]
+- !private ["s23CustomStringConvertibleP", "NSNotification"]
+- !private ["s23CustomStringConvertibleP", "Name"]
+- !private ["s23CustomStringConvertibleP", "NotificationCenter"]
+- !private ["s23CustomStringConvertibleP", "Reachability"]
+- ["s23CustomStringConvertibleP", ""]
+- !private ["s23CustomStringConvertibleP", "addObserver"]
+- !private ["s23CustomStringConvertibleP", "bssid"]
+- !private ["s23CustomStringConvertibleP", "cwinterface"]
+- !private ["s23CustomStringConvertibleP", "default"]
+- !private ["s23CustomStringConvertibleP", "eventSink"]
+- !private ["s23CustomStringConvertibleP", "forInternetConnection"]
+- !private ["s23CustomStringConvertibleP", "getWifiIP"]
+- ["s23CustomStringConvertibleP", "handle"]
+- ["s23CustomStringConvertibleP", "handleMethodCall"]
+- !private ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "interface"]
+- !private ["s23CustomStringConvertibleP", "isReachableViaWiFi"]
+- !private ["s23CustomStringConvertibleP", "method"]
+- !private ["s23CustomStringConvertibleP", "object"]
+- ["s23CustomStringConvertibleP", "onCancel"]
+- ["s23CustomStringConvertibleP", "onCancelWithArguments"]
+- ["s23CustomStringConvertibleP", "onListen"]
+- ["s23CustomStringConvertibleP", "onListenWithArguments"]
+- !private ["s23CustomStringConvertibleP", "reach"]
+- !private ["s23CustomStringConvertibleP", "reachabilityChanged"]
+- ["s23CustomStringConvertibleP", "register"]
+- ["s23CustomStringConvertibleP", "registerWithRegistrar"]
+- !private ["s23CustomStringConvertibleP", "removeObserver"]
+- !private ["s23CustomStringConvertibleP", "setStreamHandler"]
+- !private ["s23CustomStringConvertibleP", "shared"]
+- !private ["s23CustomStringConvertibleP", "ssid"]
+- !private ["s23CustomStringConvertibleP", "startNotifier"]
+- !private ["s23CustomStringConvertibleP", "statusFromReachability"]
+- !private ["s23CustomStringConvertibleP", "stopNotifier"]
+- !private ["SQ", "CWWiFiClient"]
+- !private ["SQ", "ConnectivityPlugin"]
+- !private ["SQ", "FlutterEventChannel"]
+- !private ["SQ", "FlutterMethodChannel"]
+- !private ["SQ", "FlutterMethodNotImplemented"]
+- !private ["SQ", "NSNotification"]
+- !private ["SQ", "Name"]
+- !private ["SQ", "NotificationCenter"]
+- !private ["SQ", "Reachability"]
+- ["SQ", ""]
+- !private ["SQ", "addObserver"]
+- !private ["SQ", "bssid"]
+- !private ["SQ", "cwinterface"]
+- !private ["SQ", "default"]
+- !private ["SQ", "eventSink"]
+- !private ["SQ", "forInternetConnection"]
+- !private ["SQ", "getWifiIP"]
+- ["SQ", "handle"]
+- ["SQ", "handleMethodCall"]
+- !private ["SQ", "init"]
+- !private ["SQ", "interface"]
+- !private ["SQ", "isReachableViaWiFi"]
+- !private ["SQ", "method"]
+- !private ["SQ", "object"]
+- ["SQ", "onCancel"]
+- ["SQ", "onCancelWithArguments"]
+- ["SQ", "onListen"]
+- ["SQ", "onListenWithArguments"]
+- !private ["SQ", "reach"]
+- !private ["SQ", "reachabilityChanged"]
+- ["SQ", "register"]
+- ["SQ", "registerWithRegistrar"]
+- !private ["SQ", "removeObserver"]
+- !private ["SQ", "setStreamHandler"]
+- !private ["SQ", "shared"]
+- !private ["SQ", "ssid"]
+- !private ["SQ", "startNotifier"]
+- !private ["SQ", "statusFromReachability"]
+- !private ["SQ", "stopNotifier"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", ""]
+- !private ["s32ExpressibleByStringInterpolationP", ""]
+- !private ["s26ExpressibleByStringLiteralP", ""]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", ""]
+- !private ["So19FlutterEventChannelC", "init"]
+- !private ["So19FlutterEventChannelC", "setStreamHandler"]
+- !private ["So17FlutterMethodCallC", "method"]
+- !private ["So20FlutterMethodChannelC", "init"]
+- !private ["So13FlutterPluginP", "CWWiFiClient"]
+- !private ["So13FlutterPluginP", "ConnectivityPlugin"]
+- !private ["So13FlutterPluginP", "FlutterEventChannel"]
+- !private ["So13FlutterPluginP", "FlutterMethodChannel"]
+- !private ["So13FlutterPluginP", "FlutterMethodNotImplemented"]
+- !private ["So13FlutterPluginP", "NSNotification"]
+- !private ["So13FlutterPluginP", "NotificationCenter"]
+- !private ["So13FlutterPluginP", "Reachability"]
+- ["So13FlutterPluginP", ""]
+- ["So13FlutterPluginP", "cwinterface"]
+- ["So13FlutterPluginP", "deinit"]
+- ["So13FlutterPluginP", "eventSink"]
+- !private ["So13FlutterPluginP", "getWifiIP"]
+- ["So13FlutterPluginP", "handle"]
+- ["So13FlutterPluginP", "handleMethodCall"]
+- ["So13FlutterPluginP", "init"]
+- ["So13FlutterPluginP", "onCancel"]
+- ["So13FlutterPluginP", "onCancelWithArguments"]
+- ["So13FlutterPluginP", "onListen"]
+- ["So13FlutterPluginP", "onListenWithArguments"]
+- ["So13FlutterPluginP", "reach"]
+- ["So13FlutterPluginP", "reachabilityChanged"]
+- ["So13FlutterPluginP", "register"]
+- ["So13FlutterPluginP", "registerWithRegistrar"]
+- ["So13FlutterPluginP", "statusFromReachability"]
+- !private ["So22FlutterPluginRegistrarP", "addMethodCallDelegate"]
+- !private ["So22FlutterPluginRegistrarP", "messenger"]
+- !private ["So20FlutterStreamHandlerP", "CWWiFiClient"]
+- !private ["So20FlutterStreamHandlerP", "ConnectivityPlugin"]
+- !private ["So20FlutterStreamHandlerP", "FlutterEventChannel"]
+- !private ["So20FlutterStreamHandlerP", "FlutterMethodChannel"]
+- !private ["So20FlutterStreamHandlerP", "FlutterMethodNotImplemented"]
+- !private ["So20FlutterStreamHandlerP", "NSNotification"]
+- !private ["So20FlutterStreamHandlerP", "NotificationCenter"]
+- !private ["So20FlutterStreamHandlerP", "Reachability"]
+- ["So20FlutterStreamHandlerP", ""]
+- ["So20FlutterStreamHandlerP", "cwinterface"]
+- ["So20FlutterStreamHandlerP", "deinit"]
+- ["So20FlutterStreamHandlerP", "eventSink"]
+- !private ["So20FlutterStreamHandlerP", "getWifiIP"]
+- ["So20FlutterStreamHandlerP", "handle"]
+- ["So20FlutterStreamHandlerP", "handleMethodCall"]
+- ["So20FlutterStreamHandlerP", "init"]
+- ["So20FlutterStreamHandlerP", "onCancel"]
+- ["So20FlutterStreamHandlerP", "onCancelWithArguments"]
+- ["So20FlutterStreamHandlerP", "onListen"]
+- ["So20FlutterStreamHandlerP", "onListenWithArguments"]
+- ["So20FlutterStreamHandlerP", "reach"]
+- ["So20FlutterStreamHandlerP", "reachabilityChanged"]
+- ["So20FlutterStreamHandlerP", "register"]
+- ["So20FlutterStreamHandlerP", "registerWithRegistrar"]
+- ["So20FlutterStreamHandlerP", "statusFromReachability"]
+- !private ["SH", "CWWiFiClient"]
+- !private ["SH", "ConnectivityPlugin"]
+- !private ["SH", "FlutterEventChannel"]
+- !private ["SH", "FlutterMethodChannel"]
+- !private ["SH", "FlutterMethodNotImplemented"]
+- !private ["SH", "NSNotification"]
+- !private ["SH", "Name"]
+- !private ["SH", "NotificationCenter"]
+- !private ["SH", "Reachability"]
+- ["SH", ""]
+- !private ["SH", "addObserver"]
+- !private ["SH", "bssid"]
+- !private ["SH", "cwinterface"]
+- !private ["SH", "default"]
+- !private ["SH", "eventSink"]
+- !private ["SH", "forInternetConnection"]
+- !private ["SH", "getWifiIP"]
+- ["SH", "handle"]
+- ["SH", "handleMethodCall"]
+- !private ["SH", "init"]
+- !private ["SH", "interface"]
+- !private ["SH", "isReachableViaWiFi"]
+- !private ["SH", "method"]
+- !private ["SH", "object"]
+- ["SH", "onCancel"]
+- ["SH", "onCancelWithArguments"]
+- ["SH", "onListen"]
+- ["SH", "onListenWithArguments"]
+- !private ["SH", "reach"]
+- !private ["SH", "reachabilityChanged"]
+- ["SH", "register"]
+- ["SH", "registerWithRegistrar"]
+- !private ["SH", "removeObserver"]
+- !private ["SH", "setStreamHandler"]
+- !private ["SH", "shared"]
+- !private ["SH", "ssid"]
+- !private ["SH", "startNotifier"]
+- !private ["SH", "statusFromReachability"]
+- !private ["SH", "stopNotifier"]
+- !private ["s25LosslessStringConvertibleP", ""]
+- !private ["So22NSAccessibilityElementP", ""]
+- !private ["So20NSAccessibilityGroupP", ""]
+- !private ["So25NSAccessibilityStaticTextP", ""]
+- !private ["So20NSAccessibilityTableP", ""]
+- !private ["So8NSCodingP", "Name"]
+- !private ["So8NSCodingP", ""]
+- !private ["So8NSCodingP", "object"]
+- !private ["So9NSCopyingP", "Name"]
+- !private ["So9NSCopyingP", "object"]
+- !private ["So14NSNotificationC", "Name"]
+- !private ["So14NSNotificationC", "object"]
+- ["So8NSObjectC", "CWInterface"]
+- !private ["So8NSObjectC", "CWWiFiClient"]
+- !private ["So8NSObjectC", "ConnectivityPlugin"]
+- ["So8NSObjectC", "FlutterError"]
+- !private ["So8NSObjectC", "FlutterEventChannel"]
+- ["So8NSObjectC", "FlutterEventSink"]
+- ["So8NSObjectC", "FlutterMethodCall"]
+- !private ["So8NSObjectC", "FlutterMethodChannel"]
+- !private ["So8NSObjectC", "FlutterMethodNotImplemented"]
+- ["So8NSObjectC", "FlutterPluginRegistrar"]
+- ["So8NSObjectC", "FlutterResult"]
+- ["So8NSObjectC", "NSNotification"]
+- !private ["So8NSObjectC", "Name"]
+- !private ["So8NSObjectC", "NotificationCenter"]
+- ["So8NSObjectC", "Reachability"]
+- ["So8NSObjectC", "String"]
+- ["So8NSObjectC", ""]
+- !private ["So8NSObjectC", "addObserver"]
+- !private ["So8NSObjectC", "addObserverForName"]
+- !private ["So8NSObjectC", "bssid"]
+- ["So8NSObjectC", "cwinterface"]
+- !private ["So8NSObjectC", "default"]
+- !private ["So8NSObjectC", "eventChannelWithName"]
+- ["So8NSObjectC", "eventSink"]
+- !private ["So8NSObjectC", "forInternetConnection"]
+- !private ["So8NSObjectC", "getWifiIP"]
+- ["So8NSObjectC", "handle"]
+- ["So8NSObjectC", "handleMethodCall"]
+- ["So8NSObjectC", "init"]
+- !private ["So8NSObjectC", "interface"]
+- !private ["So8NSObjectC", "interfaceWithName"]
+- !private ["So8NSObjectC", "isReachableViaWiFi"]
+- !private ["So8NSObjectC", "method"]
+- !private ["So8NSObjectC", "methodChannelWithName"]
+- !private ["So8NSObjectC", "object"]
+- ["So8NSObjectC", "onCancel"]
+- ["So8NSObjectC", "onCancelWithArguments"]
+- ["So8NSObjectC", "onListen"]
+- ["So8NSObjectC", "onListenWithArguments"]
+- ["So8NSObjectC", "reach"]
+- ["So8NSObjectC", "reachabilityChanged"]
+- !private ["So8NSObjectC", "reachabilityForInternetConnection"]
+- ["So8NSObjectC", "register"]
+- ["So8NSObjectC", "registerWithRegistrar"]
+- !private ["So8NSObjectC", "removeObserver"]
+- !private ["So8NSObjectC", "setStreamHandler"]
+- !private ["So8NSObjectC", "shared"]
+- !private ["So8NSObjectC", "sharedWiFiClient"]
+- !private ["So8NSObjectC", "ssid"]
+- !private ["So8NSObjectC", "startNotifier"]
+- ["So8NSObjectC", "statusFromReachability"]
+- !private ["So8NSObjectC", "stopNotifier"]
+- ["So8NSObjectP", "CWInterface"]
+- !private ["So8NSObjectP", "CWWiFiClient"]
+- !private ["So8NSObjectP", "ConnectivityPlugin"]
+- ["So8NSObjectP", "FlutterError"]
+- !private ["So8NSObjectP", "FlutterEventChannel"]
+- ["So8NSObjectP", "FlutterEventSink"]
+- ["So8NSObjectP", "FlutterMethodCall"]
+- !private ["So8NSObjectP", "FlutterMethodChannel"]
+- !private ["So8NSObjectP", "FlutterMethodNotImplemented"]
+- ["So8NSObjectP", "FlutterPluginRegistrar"]
+- ["So8NSObjectP", "FlutterResult"]
+- ["So8NSObjectP", "NSNotification"]
+- !private ["So8NSObjectP", "Name"]
+- !private ["So8NSObjectP", "NotificationCenter"]
+- ["So8NSObjectP", "Reachability"]
+- ["So8NSObjectP", "String"]
+- ["So8NSObjectP", ""]
+- !private ["So8NSObjectP", "addMethodCallDelegate"]
+- !private ["So8NSObjectP", "addObserver"]
+- !private ["So8NSObjectP", "addObserverForName"]
+- !private ["So8NSObjectP", "bssid"]
+- ["So8NSObjectP", "cwinterface"]
+- !private ["So8NSObjectP", "default"]
+- ["So8NSObjectP", "deinit"]
+- !private ["So8NSObjectP", "eventChannelWithName"]
+- ["So8NSObjectP", "eventSink"]
+- !private ["So8NSObjectP", "forInternetConnection"]
+- !private ["So8NSObjectP", "getWifiIP"]
+- ["So8NSObjectP", "handle"]
+- ["So8NSObjectP", "handleMethodCall"]
+- ["So8NSObjectP", "init"]
+- !private ["So8NSObjectP", "interface"]
+- !private ["So8NSObjectP", "interfaceWithName"]
+- !private ["So8NSObjectP", "isReachableViaWiFi"]
+- !private ["So8NSObjectP", "messenger"]
+- !private ["So8NSObjectP", "method"]
+- !private ["So8NSObjectP", "methodChannelWithName"]
+- !private ["So8NSObjectP", "object"]
+- ["So8NSObjectP", "onCancel"]
+- ["So8NSObjectP", "onCancelWithArguments"]
+- ["So8NSObjectP", "onListen"]
+- ["So8NSObjectP", "onListenWithArguments"]
+- ["So8NSObjectP", "reach"]
+- ["So8NSObjectP", "reachabilityChanged"]
+- !private ["So8NSObjectP", "reachabilityForInternetConnection"]
+- ["So8NSObjectP", "register"]
+- ["So8NSObjectP", "registerWithRegistrar"]
+- !private ["So8NSObjectP", "removeObserver"]
+- !private ["So8NSObjectP", "setStreamHandler"]
+- !private ["So8NSObjectP", "shared"]
+- !private ["So8NSObjectP", "sharedWiFiClient"]
+- !private ["So8NSObjectP", "ssid"]
+- !private ["So8NSObjectP", "startNotifier"]
+- ["So8NSObjectP", "statusFromReachability"]
+- !private ["So8NSObjectP", "stopNotifier"]
+- !private ["So14NSTextDelegateP", ""]
+- !private ["So18NSNotificationNamea", "reachabilityChanged"]
+- !private ["So20NSNotificationCenterC", "addObserver"]
+- !private ["So20NSNotificationCenterC", "default"]
+- !private ["So20NSNotificationCenterC", "removeObserver"]
+- !private ["SY", ""]
+- !private ["SY", "reachabilityChanged"]
+- !private ["So12ReachabilityC", "forInternetConnection"]
+- !private ["So12ReachabilityC", "isReachableViaWiFi"]
+- !private ["So12ReachabilityC", "startNotifier"]
+- !private ["So12ReachabilityC", "stopNotifier"]
+- !private ["ST", ""]
+- !private ["s16TextOutputStreamP", ""]
+- !private ["s20TextOutputStreamableP", ""]
+- !private ["s35_ExpressibleByBuiltinBooleanLiteralP", "init"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", ""]
+- !private ["s35_ExpressibleByBuiltinIntegerLiteralP", "init"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", ""]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "Name"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", ""]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "object"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "reachabilityChanged"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "CWWiFiClient"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "ConnectivityPlugin"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "FlutterEventChannel"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "FlutterMethodChannel"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "FlutterMethodNotImplemented"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "NSNotification"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "Name"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "NotificationCenter"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "Reachability"]
+- ["10Foundation27_KeyValueCodingAndObservingP", ""]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "addObserver"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "bssid"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "cwinterface"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "default"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "eventSink"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "forInternetConnection"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "getWifiIP"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "handle"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "handleMethodCall"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "interface"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "isReachableViaWiFi"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "method"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "object"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "onCancel"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "onCancelWithArguments"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "onListen"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "onListenWithArguments"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "reach"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "reachabilityChanged"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "register"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "registerWithRegistrar"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "removeObserver"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "setStreamHandler"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "shared"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "ssid"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "startNotifier"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "statusFromReachability"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "stopNotifier"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "CWWiFiClient"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "ConnectivityPlugin"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "FlutterEventChannel"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "FlutterMethodChannel"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "FlutterMethodNotImplemented"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "NSNotification"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "Name"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "NotificationCenter"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "Reachability"]
+- ["10Foundation37_KeyValueCodingAndObservingPublishingP", ""]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "addObserver"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "bssid"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "cwinterface"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "default"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "eventSink"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "forInternetConnection"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "getWifiIP"]
+- ["10Foundation37_KeyValueCodingAndObservingPublishingP", "handle"]
+- ["10Foundation37_KeyValueCodingAndObservingPublishingP", "handleMethodCall"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "init"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "interface"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "isReachableViaWiFi"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "method"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "object"]
+- ["10Foundation37_KeyValueCodingAndObservingPublishingP", "onCancel"]
+- ["10Foundation37_KeyValueCodingAndObservingPublishingP", "onCancelWithArguments"]
+- ["10Foundation37_KeyValueCodingAndObservingPublishingP", "onListen"]
+- ["10Foundation37_KeyValueCodingAndObservingPublishingP", "onListenWithArguments"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "reach"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "reachabilityChanged"]
+- ["10Foundation37_KeyValueCodingAndObservingPublishingP", "register"]
+- ["10Foundation37_KeyValueCodingAndObservingPublishingP", "registerWithRegistrar"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "removeObserver"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "setStreamHandler"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "shared"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "ssid"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "startNotifier"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "statusFromReachability"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "stopNotifier"]
+- !private ["s21_ObjectiveCBridgeableP", "reachabilityChanged"]
+- !private ["s20_SwiftNewtypeWrapperP", "reachabilityChanged"]
+depends-nominal:
+- !private "SK"
+- "s7CVarArgP"
+- !private "So11CWInterfaceC"
+- !private "So12CWWiFiClientC"
+- !private "Sl"
+- !private "SL"
+- "18connectivity_macos18ConnectivityPluginC"
+- "s28CustomDebugStringConvertibleP"
+- "s23CustomStringConvertibleP"
+- "SQ"
+- !private "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- !private "s32ExpressibleByStringInterpolationP"
+- !private "s26ExpressibleByStringLiteralP"
+- !private "s33ExpressibleByUnicodeScalarLiteralP"
+- !private "So19FlutterEventChannelC"
+- !private "So17FlutterMethodCallC"
+- !private "So20FlutterMethodChannelC"
+- "So13FlutterPluginP"
+- !private "So22FlutterPluginRegistrarP"
+- "So20FlutterStreamHandlerP"
+- "SH"
+- !private "s25LosslessStringConvertibleP"
+- !private "So22NSAccessibilityElementP"
+- !private "So20NSAccessibilityGroupP"
+- !private "So25NSAccessibilityStaticTextP"
+- !private "So20NSAccessibilityTableP"
+- !private "So8NSCodingP"
+- !private "So9NSCopyingP"
+- !private "So14NSNotificationC"
+- "So8NSObjectC"
+- "So8NSObjectP"
+- !private "So14NSTextDelegateP"
+- !private "So18NSNotificationNamea"
+- !private "So20NSNotificationCenterC"
+- !private "SY"
+- !private "So12ReachabilityC"
+- !private "ST"
+- !private "s16TextOutputStreamP"
+- !private "s20TextOutputStreamableP"
+- !private "s35_ExpressibleByBuiltinBooleanLiteralP"
+- !private "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- !private "s35_ExpressibleByBuiltinIntegerLiteralP"
+- !private "s34_ExpressibleByBuiltinStringLiteralP"
+- !private "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- !private "s35_HasCustomAnyHashableRepresentationP"
+- "10Foundation27_KeyValueCodingAndObservingP"
+- "10Foundation37_KeyValueCodingAndObservingPublishingP"
+- !private "s21_ObjectiveCBridgeableP"
+- !private "s20_SwiftNewtypeWrapperP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/XPC.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/ObjectiveC.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/CoreMedia.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/CoreData.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/CoreImage.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/Combine.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/QuartzCore.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/Dispatch.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/Metal.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/Darwin.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/CoreLocation.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/Foundation.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/CoreFoundation.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/CoreAudio.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/CoreGraphics.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/Swift.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/IOKit.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/CloudKit.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/AppKit.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/prebuilt-modules/SwiftOnoneSupport.swiftmodule/x86_64-apple-macos.swiftmodule"
+- "/Users/pol/Developer/flutter/bin/cache/artifacts/engine/darwin-x64/FlutterMacOS.framework/Headers/FlutterPluginMacOS.h"
+- "/Users/pol/Developer/flutter/bin/cache/artifacts/engine/darwin-x64/FlutterMacOS.framework/Headers/FlutterPluginRegistrarMacOS.h"
+- "/Users/pol/Developer/flutter/bin/cache/artifacts/engine/darwin-x64/FlutterMacOS.framework/Headers/FlutterMacOS.h"
+- "/Users/pol/Projects/Skillbox/di/macos/Pods/Target Support Files/connectivity_macos/connectivity_macos-umbrella.h"
+- "/Users/pol/Projects/Skillbox/di/macos/Pods/Target Support Files/Reachability/Reachability-umbrella.h"
+- "/Users/pol/Developer/flutter/bin/cache/artifacts/engine/darwin-x64/FlutterMacOS.framework/Headers/FlutterEngine.h"
+- "/Users/pol/Developer/flutter/bin/cache/artifacts/engine/darwin-x64/FlutterMacOS.framework/Headers/FlutterTexture.h"
+- "/Users/pol/Developer/flutter/bin/cache/artifacts/engine/darwin-x64/FlutterMacOS.framework/Headers/FlutterAppDelegate.h"
+- "/Users/pol/Developer/flutter/bin/cache/artifacts/engine/darwin-x64/FlutterMacOS.framework/Headers/FlutterBinaryMessenger.h"
+- "/Users/pol/Developer/flutter/bin/cache/artifacts/engine/darwin-x64/FlutterMacOS.framework/Headers/FlutterViewController.h"
+- "/Users/pol/Developer/flutter/.pub-cache/hosted/pub.dartlang.org/connectivity_macos-0.2.0/macos/Classes/IPHelper.h"
+- "/Users/pol/Developer/flutter/bin/cache/artifacts/engine/darwin-x64/FlutterMacOS.framework/Headers/FlutterCodecs.h"
+- "/Users/pol/Developer/flutter/bin/cache/artifacts/engine/darwin-x64/FlutterMacOS.framework/Headers/FlutterChannels.h"
+- "/Users/pol/Developer/flutter/bin/cache/artifacts/engine/darwin-x64/FlutterMacOS.framework/Headers/FlutterMacros.h"
+- "/Users/pol/Developer/flutter/bin/cache/artifacts/engine/darwin-x64/FlutterMacOS.framework/Headers/FlutterDartProject.h"
+- "/Users/pol/Projects/Skillbox/di/macos/Pods/Reachability/Reachability.h"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/include/mach-o/dyld.modulemap"
+- "/Users/pol/Projects/Skillbox/di/build/macos/Build/Intermediates.noindex/Pods.build/Debug/connectivity_macos.build/unextended-module.modulemap"
+- "/Users/pol/Projects/Skillbox/di/build/macos/Build/Intermediates.noindex/Pods.build/Debug/Reachability.build/module.modulemap"
+- "/Users/pol/Developer/flutter/bin/cache/artifacts/engine/darwin-x64/FlutterMacOS.framework/Modules/module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/include/mach-o/compact_unwind_encoding.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/include/xpc/XPC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/CoreWLAN.framework/Headers/CoreWLAN.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/CoreMedia.framework/Headers/CoreMedia.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/CoreData.framework/Headers/CoreData.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/apinotes/Dispatch.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/CoreLocation.framework/Headers/CoreLocation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/ApplicationServices.framework/Headers/ApplicationServices.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/CoreAudioTypes.framework/Headers/CoreAudioTypes.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/CloudKit.framework/Headers/CloudKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/AppKit.framework/Headers/AppKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
+interface-hash: "67d52a29af38c936da7228f7d35e0150"
