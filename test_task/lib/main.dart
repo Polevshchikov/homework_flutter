@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:test_task/Screens/LoginScreen.dart';
+import 'package:flutter/services.dart';
+import 'package:test_task/components/LoginScreen/LoginScreen.dart';
+import 'package:test_task/theme/ColorPalette.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([
+    //Вертикальная ориентация экрана
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
   runApp(MyApp());
 }
 
@@ -13,7 +21,8 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         fontFamily: 'SF-Pro',
-        primarySwatch: Colors.blue,
+        primarySwatch: colorCursorActiveForm,
+        primaryColor: colorTextActiveForm,
       ),
       home: LoginScreen(),
     );
