@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:test_task/components/LoginScreen/elements/LoginScreen__BodyPage.dart';
+import 'package:test_task/components/LoginScreen/elements/LoginScreen_BodyPage.dart';
 import 'package:test_task/components/LoginScreen/elements/ClipPathClass.dart';
 
 import 'package:test_task/theme/ColorPalette.dart';

@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:test_task/components/LoginScreen/elements/LoginScreen__Button.dart';
-import 'package:test_task/components/LoginScreen/elements/LoginScreen__TextForm.dart';
+import 'package:test_task/components/LoginScreen/elements/LoginScreen_Button.dart';
+import 'package:test_task/components/LoginScreen/elements/LoginScreen_TextForm.dart';
 import 'package:test_task/components/MainScreen/MainScreen.dart';
 import 'package:test_task/theme/ColorPalette.dart';
 

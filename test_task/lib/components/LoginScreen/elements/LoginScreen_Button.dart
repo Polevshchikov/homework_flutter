@@ -10,13 +10,13 @@ class LoginScreenButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
-      minWidth: 230.0,
+      minWidth: MediaQuery.of(context).size.width * 0.62,
       height: 38.0,
       onPressed: isBtnEnabled ? onPressed : null,
       elevation: 3,
       disabledColor: colorButtonDisable,
       color: colorButtonActiv,
-      child: Text(
+      child: const Text(
         'Войти',
         style: TextStyle(
           color: colorWhite,

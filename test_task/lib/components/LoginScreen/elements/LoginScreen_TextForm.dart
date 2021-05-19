@@ -24,17 +24,17 @@ class LoginScreenTextForm extends StatelessWidget {
       obscureText:
           obscureText, //TODO: судя по макету точки должны быть больше, я не знаю как увеличить их размер
       focusNode: focusNode,
-      style: TextStyle(fontSize: 16, color: colorBlack),
+      style: const TextStyle(fontSize: 16, color: colorBlack),
       controller: controller,
       validator: (value) => validateForm(
           value: value, formName: hintText, passwordInput: controller.text),
       keyboardType: TextInputType.emailAddress,
       decoration: InputDecoration(
         labelText: hintText,
-        labelStyle: TextStyle(fontSize: 16),
-        focusedBorder: UnderlineInputBorder(
+        labelStyle: const TextStyle(fontSize: 16),
+        focusedBorder: const UnderlineInputBorder(
             borderSide: BorderSide(color: colorBorderActiveForm, width: 1)),
-        enabledBorder: UnderlineInputBorder(
+        enabledBorder: const UnderlineInputBorder(
             borderSide: BorderSide(color: colorBorderNotActiveForm, width: 1)),
       ),
       onFieldSubmitted: (term) {
