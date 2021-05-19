@@ -13,7 +13,7 @@ class UserList extends StatefulWidget {
 }
 
 class _UserListState extends State<UserList> {
-  ScrollController _scrollController;
+  late ScrollController _scrollController;
 
   bool _isScrolled = false;
 
@@ -26,7 +26,7 @@ class _UserListState extends State<UserList> {
 
   //Метод меняет флаг
   void _listenToScrollChange() {
-    if (_scrollController.offset >= 70.0) {
+    if (_scrollController.offset >= 40.0) {
       setState(() {
         _isScrolled = true;
       });
@@ -57,8 +57,9 @@ class _UserListState extends State<UserList> {
             slivers: [
               SliverAppBar(
                 backgroundColor: Colors.white,
+                centerTitle: true,
                 pinned: true,
-                expandedHeight: 130,
+                expandedHeight: 110,
                 title: AnimatedOpacity(
                   duration: Duration(milliseconds: 300),
                   opacity: _isScrolled ? 1.0 : 0.0,
@@ -151,7 +152,7 @@ class _UserListState extends State<UserList> {
             ),
           );
         }
-        return null;
+        return Container();
       },
     );
   }

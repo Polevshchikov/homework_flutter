@@ -3,7 +3,7 @@ class Company {
   final String catchPhrase;
   final String bs;
 
-  Company({this.name, this.catchPhrase, this.bs});
+  Company({required this.name, required this.catchPhrase, required this.bs});
   factory Company.fromJson(Map<String, dynamic> json) {
     return Company(
       name: json['name'],
@@ -19,7 +19,11 @@ class User {
   final String email;
   final Company company;
 
-  User({this.id, this.email, this.name, this.company});
+  User(
+      {required this.id,
+      required this.email,
+      required this.name,
+      required this.company});
 
   factory User.fromJson(Map<String, dynamic> json) {
     return User(

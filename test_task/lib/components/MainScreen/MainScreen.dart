@@ -5,7 +5,7 @@ import 'package:test_task/services/user/cubit/user_cubit.dart';
 import 'package:test_task/services/user/user_repository.dart';
 
 class MainScreen extends StatelessWidget {
-  MainScreen({Key key}) : super(key: key);
+  MainScreen({Key? key}) : super(key: key);
 
   final usersRepository = UsersRepository();
 

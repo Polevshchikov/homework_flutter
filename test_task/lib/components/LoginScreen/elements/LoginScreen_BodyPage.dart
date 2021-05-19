@@ -14,13 +14,13 @@ class BodyPage extends StatefulWidget {
   final bool isBtnEnabled;
 
   const BodyPage({
-    Key key,
-    this.controllerEmail,
-    this.focusEmail,
-    this.formKey,
-    this.controllerPassword,
-    this.focusPassword,
-    this.isBtnEnabled,
+    Key? key,
+    required this.controllerEmail,
+    required this.formKey,
+    required this.focusEmail,
+    required this.controllerPassword,
+    required this.focusPassword,
+    required this.isBtnEnabled,
   }) : super(key: key);
 
   @override
@@ -30,7 +30,7 @@ class BodyPage extends StatefulWidget {
 class _BodyPageState extends State<BodyPage> {
   //флаг, переход на след. экран
   bool _permissionMove = false;
-  GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  GlobalKey<dynamic> formKey = GlobalKey<FormState>();
 
   @override
   void initState() {
@@ -40,8 +40,8 @@ class _BodyPageState extends State<BodyPage> {
 
 //Метод проверяющий валидацию ввода данных и в случае успеха переходим на страницу
   void _signIn() async {
-    if (formKey.currentState.validate()) {
-      formKey.currentState.reset();
+    if (formKey.currentState!.validate()) {
+      formKey.currentState?.reset();
       setState(() {
         _permissionMove = !_permissionMove;
       });

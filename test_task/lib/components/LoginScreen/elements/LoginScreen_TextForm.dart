@@ -4,12 +4,12 @@ import 'package:test_task/theme/ColorPalette.dart';
 
 class LoginScreenTextForm extends StatelessWidget {
   const LoginScreenTextForm(
-      {Key key,
-      this.controller,
+      {Key? key,
+      required this.controller,
       this.obscureText = false,
-      this.focusNode,
-      this.nextFocusNode,
-      this.hintText})
+      required this.focusNode,
+      required this.nextFocusNode,
+      required this.hintText})
       : super(key: key);
 
   final TextEditingController controller;
@@ -27,7 +27,9 @@ class LoginScreenTextForm extends StatelessWidget {
       style: const TextStyle(fontSize: 16, color: colorBlack),
       controller: controller,
       validator: (value) => validateForm(
-          value: value, formName: hintText, passwordInput: controller.text),
+          value: value ?? '',
+          formName: hintText,
+          passwordInput: controller.text),
       keyboardType: TextInputType.emailAddress,
       decoration: InputDecoration(
         labelText: hintText,

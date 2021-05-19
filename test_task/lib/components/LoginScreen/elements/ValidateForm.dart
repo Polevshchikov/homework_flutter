@@ -1,6 +1,8 @@
 ///Валидация форм
 dynamic validateForm(
-    {String value, String formName, String passwordInput = ''}) {
+    {required String value,
+    required String formName,
+    String passwordInput = ''}) {
   if (value == '') {
     return 'Заполните поле ' + formName;
   }

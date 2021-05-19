@@ -4,7 +4,8 @@ import 'package:test_task/theme/ColorPalette.dart';
 class LoginScreenButton extends StatelessWidget {
   final VoidCallback onPressed;
   final bool isBtnEnabled;
-  const LoginScreenButton({Key key, this.onPressed, this.isBtnEnabled})
+  const LoginScreenButton(
+      {Key? key, required this.onPressed, required this.isBtnEnabled})
       : super(key: key);
 
   @override

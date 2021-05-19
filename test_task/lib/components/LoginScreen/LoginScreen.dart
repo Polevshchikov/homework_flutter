@@ -6,7 +6,7 @@ import 'package:test_task/components/LoginScreen/elements/ClipPathClass.dart';
 import 'package:test_task/theme/ColorPalette.dart';
 
 class LoginScreen extends StatefulWidget {
-  const LoginScreen({Key key}) : super(key: key);
+  const LoginScreen({Key? key}) : super(key: key);
 
   @override
   _LoginScreenState createState() => _LoginScreenState();
@@ -16,8 +16,8 @@ class _LoginScreenState extends State<LoginScreen> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final TextEditingController _controllerEmail = TextEditingController();
   final TextEditingController _controllerPassword = TextEditingController();
-  FocusNode _focusEmail;
-  FocusNode _focusPassword;
+  late FocusNode _focusEmail;
+  late FocusNode _focusPassword;
   //Флаг, активная кнопка
   bool _isBtnEnabled = false;
 
