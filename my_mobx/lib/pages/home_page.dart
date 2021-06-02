@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:my_mobx/pages/job_page.dart';
 import 'package:my_mobx/store/job_store.dart';
 import 'package:provider/provider.dart';
 

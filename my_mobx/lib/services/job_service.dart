@@ -1,14 +1,17 @@
 import 'package:dio/dio.dart';
 import 'package:my_mobx/models/job.dart';
+import 'package:meta/meta.dart';
 
-class JobProvider {
-  static Future<List<Job>> searchJobs(String query) => _getJobFromUrl(
+/// Сервис работ
+class JobService {
+  final Dio dio;
+  JobService({@required this.dio});
+
+  Future<List<Job>> searchJobs(String query) => _getJobFromUrl(
       'https://jobs.github.com/positions.json?description=$query');
 
-  static Future<List<Job>> _getJobFromUrl(String url) async {
-    Dio _dio = Dio();
-    print(url);
-    Response response = await _dio.get(url);
+  Future<List<Job>> _getJobFromUrl(String url) async {
+    Response response = await dio.get(url);
     if (response.statusCode == 200) {
       List<Job> data =
           response.data.map<Job>((item) => Job.fromJson(item)).toList();

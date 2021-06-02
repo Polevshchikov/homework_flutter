@@ -1,12 +1,18 @@
 import 'package:mobx/mobx.dart';
+import 'package:my_mobx/locator_service.dart';
 import 'package:my_mobx/models/job.dart';
-import 'package:my_mobx/services/job_api_provider.dart';
+import 'package:my_mobx/services/job_service.dart';
 
 part 'job_store.g.dart';
 
 class JobStore = _JobStore with _$JobStore;
 
 abstract class _JobStore with Store {
+  JobService jobService;
+  _JobStore() {
+    jobService = sl.get<Services>().jobService;
+  }
+
   @observable
   String query = '';
 
@@ -38,7 +44,7 @@ abstract class _JobStore with Store {
     isLoading = true;
     jobs.clear();
     try {
-      jobs = await JobProvider.searchJobs(query);
+      jobs = await jobService.searchJobs(query);
       isLoading = false;
     } catch (e) {
       isLoading = false;
