@@ -1,4 +1,4 @@
-name: my_mobx
+name: redux_test
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -18,17 +18,14 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  dio: ^4.0.0
-  mobx: ^1.2.1+4
-  flutter_mobx: ^1.1.0+2
-  provider: ^4.3.2+2
-  get_it: ^7.1.3
-
+  redux: ^5.0.0
+  flutter_redux: ^0.8.2
+  redux_thunk: ^0.4.0
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
@@ -36,8 +33,6 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  build_runner: ^1.10.6
-  mobx_codegen: ^1.1.2
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

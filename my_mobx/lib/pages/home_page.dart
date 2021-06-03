@@ -14,13 +14,19 @@ class _HomePageState extends State<HomePage> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final TextEditingController _controller = TextEditingController();
   bool _isBtnEnabled = false;
+
+  JobStore jobStore;
+
   @override
   void initState() {
     super.initState();
+
     _controller.addListener(() {
-      setState(() {
-        _isBtnEnabled = _controller.value.text.isNotEmpty;
-      });
+      if (_isBtnEnabled != _controller.value.text.isNotEmpty) {
+        setState(() {
+          _isBtnEnabled = _controller.value.text.isNotEmpty;
+        });
+      }
     });
   }
 
@@ -31,8 +37,14 @@ class _HomePageState extends State<HomePage> {
   }
 
   @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    print('xxxx');
+    jobStore = context.watch<JobStore>();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    final store = context.watch<JobStore>();
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -64,18 +76,19 @@ class _HomePageState extends State<HomePage> {
                     flex: 1,
                     child: Observer(
                       builder: (context) {
+                        print('22222');
                         return MaterialButton(
                           onPressed: _isBtnEnabled
                               ? () {
-                                  store.initText();
-                                  store.setQuery(_controller.text);
-                                  store.loadJob();
+                                  jobStore.initText();
+                                  jobStore.setQuery(_controller.text);
+                                  jobStore.loadJob();
                                 }
                               : null,
                           elevation: 3,
                           disabledColor: const Color(0xFFE9E9E9),
                           color: const Color(0xFFE5E5E5),
-                          child: const Text(
+                          child: Text(
                             'Искать',
                             style: TextStyle(
                               color: Colors.black,
@@ -91,7 +104,8 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
               Observer(builder: (context) {
-                if (store.isInitText == true) {
+                print('11111');
+                if (jobStore.isInitText == true) {
                   return Container(
                     margin: EdgeInsets.only(
                         top: MediaQuery.of(context).size.height / 3),
@@ -100,7 +114,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   );
                 }
-                if (store.loadingError) {
+                if (jobStore.loadingError) {
                   return Container(
                     margin: EdgeInsets.only(
                         top: MediaQuery.of(context).size.height / 4),
@@ -110,7 +124,7 @@ class _HomePageState extends State<HomePage> {
                         Text('Введите описание вакансии'),
                         MaterialButton(
                           onPressed: () {
-                            store.loadJob();
+                            jobStore.loadJob();
                           },
                           elevation: 3,
                           disabledColor: const Color(0xFFE9E9E9),
@@ -129,7 +143,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   );
                 } else {
-                  if (store.isLoading) {
+                  if (jobStore.isLoading) {
                     return Container(
                       margin: EdgeInsets.only(
                           top: MediaQuery.of(context).size.height / 3),
@@ -140,7 +154,7 @@ class _HomePageState extends State<HomePage> {
                   }
                   return Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: store.jobs
+                    children: jobStore.jobs
                         .map(
                           (job) => ListTile(
                             title: Text(
