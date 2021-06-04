@@ -65,6 +65,13 @@ class _NotePageState extends State<NotePage> {
                   builder: (context) => HomePage(),
                 ),
               );
+            } else if (store.state.isEmpty) {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => HomePage(),
+                ),
+              );
             } else {
               store.dispatch(EditNoteAction(
                 widget.item,
@@ -90,7 +97,9 @@ class _NotePageState extends State<NotePage> {
                   context: context,
                   builder: (BuildContext context) => promptRemove(
                       callback: () {
+                        Navigator.of(context).pop();
                         store.dispatch(RemoveNoteAction(widget.item));
+
                         Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
