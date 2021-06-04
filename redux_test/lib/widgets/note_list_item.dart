@@ -4,6 +4,7 @@ import 'package:redux/redux.dart';
 import 'package:redux_test/models/note.dart';
 import 'package:redux_test/pages/note_page.dart';
 import 'package:redux_test/redux/actions.dart';
+import 'package:redux_test/widgets/prompt_remove.dart';
 
 class NoteListItem extends StatelessWidget {
   final Note note;
@@ -32,42 +33,12 @@ class NoteListItem extends StatelessWidget {
           onPressed: () {
             showDialog(
               context: context,
-              builder: (BuildContext context) => AlertDialog(
-                  backgroundColor: Colors.white,
-                  title: Text(
-                    'Удалить заметку?',
-                    style: TextStyle(
-                      color: Colors.black,
-                    ),
-                  ),
-                  actions: <Widget>[
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        TextButton(
-                          onPressed: () => Navigator.of(context).pop(),
-                          child: Text(
-                            'Нет',
-                            style: TextStyle(
-                              color: Colors.black,
-                            ),
-                          ),
-                        ),
-                        TextButton(
-                          onPressed: () {
-                            store.dispatch(RemoveNoteAction(position));
-                            Navigator.of(context).pop();
-                          },
-                          child: Text(
-                            'Да',
-                            style: TextStyle(
-                              color: Colors.black,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ]),
+              builder: (BuildContext context) => promptRemove(
+                  callback: () {
+                    store.dispatch(RemoveNoteAction(position));
+                    Navigator.of(context).pop();
+                  },
+                  context: context),
             );
           },
           icon: Icon(Icons.delete),

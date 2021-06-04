@@ -4,6 +4,7 @@ import 'package:redux/redux.dart';
 import 'package:redux_test/models/note.dart';
 import 'package:redux_test/pages/home_page.dart';
 import 'package:redux_test/redux/actions.dart';
+import 'package:redux_test/widgets/prompt_remove.dart';
 
 class NotePage extends StatefulWidget {
   final int item;
@@ -47,50 +48,6 @@ class _NotePageState extends State<NotePage> {
     super.didChangeDependencies();
   }
 
-  promptRemove() {
-    return AlertDialog(
-        backgroundColor: Colors.white,
-        title: Text(
-          'Удалить заметку?',
-          style: TextStyle(
-            color: Colors.black,
-          ),
-        ),
-        actions: <Widget>[
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              TextButton(
-                onPressed: () => Navigator.of(context).pop(),
-                child: Text(
-                  'Нет',
-                  style: TextStyle(
-                    color: Colors.black,
-                  ),
-                ),
-              ),
-              TextButton(
-                onPressed: () {
-                  store.dispatch(RemoveNoteAction(widget.item));
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => HomePage(),
-                    ),
-                  );
-                },
-                child: Text(
-                  'Да',
-                  style: TextStyle(
-                    color: Colors.black,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ]);
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -131,7 +88,17 @@ class _NotePageState extends State<NotePage> {
             onPressed: () {
               showDialog(
                   context: context,
-                  builder: (BuildContext context) => promptRemove());
+                  builder: (BuildContext context) => promptRemove(
+                      callback: () {
+                        store.dispatch(RemoveNoteAction(widget.item));
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => HomePage(),
+                          ),
+                        );
+                      },
+                      context: context));
             },
           ),
         ],
