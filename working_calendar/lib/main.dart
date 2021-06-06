@@ -1,8 +1,14 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:working_calendar/utils.dart';
+import 'package:http/http.dart' as http;
+
+import 'models/data_entity.dart';
+import 'services/api_provider.dart';
 
 void main() {
   initializeDateFormatting().then((_) => runApp(MyApp()));
@@ -36,6 +42,24 @@ class _StartPageState extends State<StartPage> {
   DateTime _selectedDay = DateTime.now();
   DateTime? _rangeStart;
   DateTime? _rangeEnd;
+
+  Future<String> loadJsonData() async {
+    var jsonText = await rootBundle.load('assets/files/calendar_2015.json');
+    String data = await DefaultAssetBundle.of(context)
+        .loadString("assets/files/calendar_2015.json");
+    final jsonResult = json.decode(data);
+    final DataEntity dataEntity = DataEntity.fromJson(jsonResult);
+    print(dataEntity.months.map((e) => e.days[0]));
+
+    return 'success';
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    this.loadJsonData();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
