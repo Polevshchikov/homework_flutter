@@ -62,20 +62,12 @@ class StartPage extends StatelessWidget {
                               children: [
                                 GestureDetector(
                                   child: Icon(Icons.arrow_drop_up),
-                                  onTap: () => store.dispatch(
-                                    AddDayAction(
-                                      selectedMonth: listMonths[
-                                          vm.rangeStartDate.month - 1],
-                                      selectedYear:
-                                          vm.rangeStartDate.year.toString(),
-                                      selectedDay: vm.rangeStartDate.day,
-                                    ),
-                                  ),
+                                  onTap: () => store.dispatch(AddDayAction()),
                                 ),
                                 GestureDetector(
                                   child: Icon(Icons.arrow_drop_down),
-                                  onTap: () => store.dispatch(RemoveDayAction(
-                                      selectedDay: vm.rangeStartDate.day)),
+                                  onTap: () =>
+                                      store.dispatch(RemoveDayAction()),
                                 ),
                               ],
                             ),
@@ -136,16 +128,6 @@ class StartPage extends StatelessWidget {
                       width: 100,
                       child: TextButton(
                           onPressed: () async {
-                            // var isSwitchedOn = vm.isSwitchedOn;
-                            // print(isSwitchedOn);
-                            // var studyingTime = vm.studyingTime;
-                            // print(studyingTime);
-                            // var selectedDay = vm.selectedDay;
-                            // print(selectedDay);
-                            // var selectedMonth = vm.selectedMonth;
-                            // print(selectedMonth);
-                            // var selectedYear = vm.selectedYear;
-                            // print(selectedYear);
                             DateEntity dateEntity = await sl
                                 .get<Services>()
                                 .dateRepository
@@ -177,7 +159,7 @@ class StartPage extends StatelessWidget {
                     ),
                   ],
                 ),
-                // CalendarStartPage(),
+                CalendarStartPage(),
                 const SizedBox(height: 20),
                 Text(
                     'Дата начала обучения: ${vm.rangeEndDate.day}.${vm.rangeEndDate.month}.${vm.rangeEndDate.year}'),

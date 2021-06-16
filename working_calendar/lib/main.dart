@@ -5,7 +5,6 @@ import 'package:redux/redux.dart';
 import 'package:working_calendar/locator_service.dart';
 import 'package:working_calendar/redux/app_state.dart';
 import 'package:working_calendar/redux/reducers.dart';
-import 'package:working_calendar/utils/constant.dart';
 
 import 'pages/start_page.dart';
 

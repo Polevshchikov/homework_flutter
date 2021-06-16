@@ -125,73 +125,14 @@ Reducer<DateTime> _generateStartDateReducer = combineReducers([
   TypedReducer<DateTime, RecordDateYearAction>(_setRecordYearReducer),
 ]);
 
-DateTime _addDayReducer(DateTime date, AddDayAction action) {
-  return date.add(const Duration(days: 1));
-  // int selectedIntYear = int.parse(action.selectedYear);
-  // int selectedIntMonth = 1;
-  // for (var item = 0; item < listMonths.length; item++) {
-  //   if ('${listMonths[item]}' == action.selectedMonth) {
-  //     selectedIntMonth = ++item;
-  //   }
-  // }
-
-  // if (selectedIntMonth == 1 ||
-  //     selectedIntMonth == 3 ||
-  //     selectedIntMonth == 5 ||
-  //     selectedIntMonth == 7 ||
-  //     selectedIntMonth == 8 ||
-  //     selectedIntMonth == 10 ||
-  //     selectedIntMonth == 12) {
-  //   if (action.selectedDay < 31 && action.selectedDay > 0) {
-  //     return date.add(const Duration(days: 1));
-  //   } else {
-  //     return date;
-  //   }
-  // } else if (selectedIntMonth == 4 ||
-  //     selectedIntMonth == 6 ||
-  //     selectedIntMonth == 9 ||
-  //     selectedIntMonth == 11) {
-  //   if (action.selectedDay < 30 && action.selectedDay > 0) {
-  //     return date.add(const Duration(days: 1));
-  //   }
-  //   else if (action.selectedDay > 30) {
-  //     return DateTime(selectedIntYear, selectedIntMonth, 30);
-  //   } else {
-  //     return date;
-  //   }
-  // } else {
-  //   if ((((selectedIntYear % 4) == 0) && !((selectedIntYear % 100).isNaN)) ||
-  //       !((selectedIntYear % 400).isNaN)) {
-  //     if (action.selectedDay < 29 && action.selectedDay > 0) {
-  //       return date.add(const Duration(days: 1));
-  //     } else if (action.selectedDay > 29) {
-  //       return DateTime(selectedIntYear, selectedIntMonth, 29);
-  //     } else {
-  //       return date;
-  //     }
-  //   } else {
-  //     if (action.selectedDay < 28 && action.selectedDay > 0) {
-  //       return date.add(const Duration(days: 1));
-  //     } else if (action.selectedDay > 28) {
-  //       return DateTime(selectedIntYear, selectedIntMonth, 28);
-  //     } else {
-  //       return date;
-  //     }
-  //   }
-  // }
-}
+DateTime _addDayReducer(DateTime date, AddDayAction action) =>
+    date.add(const Duration(days: 1));
 
 DateTime _resetDayReducer(DateTime date, ResetDayAction action) =>
     DateTime.now();
 
-DateTime _removeDayReducer(DateTime date, RemoveDayAction action) {
-  return date.subtract(const Duration(days: 1));
-  // if (action.selectedDay > 1) {
-  //   return date.subtract(const Duration(days: 1));
-  // } else {
-  //   return date;
-  // }
-}
+DateTime _removeDayReducer(DateTime date, RemoveDayAction action) =>
+    date.subtract(const Duration(days: 1));
 
 /// Запись нового месяца
 DateTime _setRecordMonthReducer(DateTime date, RecordDateMonthAction action) {
@@ -201,10 +142,58 @@ DateTime _setRecordMonthReducer(DateTime date, RecordDateMonthAction action) {
       selectedIntMonth = ++item;
     }
   }
+  int count = date.day;
+  if (selectedIntMonth == 1 ||
+      selectedIntMonth == 3 ||
+      selectedIntMonth == 5 ||
+      selectedIntMonth == 7 ||
+      selectedIntMonth == 8 ||
+      selectedIntMonth == 10 ||
+      selectedIntMonth == 12) {
+    if (count >= 31) {
+      count = 31;
+      return DateTime(date.year, selectedIntMonth, count);
+    }
+  } else if (selectedIntMonth == 4 ||
+      selectedIntMonth == 6 ||
+      selectedIntMonth == 9 ||
+      selectedIntMonth == 11) {
+    if (count >= 30) {
+      count = 30;
+      return DateTime(date.year, selectedIntMonth, count);
+    }
+  } else if (selectedIntMonth == 2) {
+    if ((((date.year % 4) == 0) && ((date.year % 100) == 0)) ||
+        ((date.year % 400) == 0)) {
+      if (count >= 29) {
+        count = 29;
+        return DateTime(date.year, selectedIntMonth, count);
+      }
+    } else {
+      if (count >= 28) {
+        count = 28;
+        return DateTime(date.year, selectedIntMonth, count);
+      }
+    }
+  }
   return DateTime(date.year, selectedIntMonth, date.day);
 }
 
 /// Запись нового года
 DateTime _setRecordYearReducer(DateTime date, RecordDateYearAction action) {
+  int selectedIntYear = date.year;
+  int count = date.day;
+  if ((((selectedIntYear % 4) == 0) && ((selectedIntYear % 100) == 0)) ||
+      ((selectedIntYear % 400) == 0)) {
+    if (count >= 29) {
+      count = 29;
+      return DateTime(action.newDateYear, date.month, count);
+    }
+  } else {
+    if (count >= 28) {
+      count = 28;
+      return DateTime(action.newDateYear, date.month, count);
+    }
+  }
   return DateTime(action.newDateYear, date.month, date.day);
 }

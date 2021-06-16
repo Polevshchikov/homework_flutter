@@ -1,24 +1,10 @@
 import 'package:working_calendar/models/date_entity.dart';
 
 /// Добавление +1 день
-class AddDayAction {
-  final String selectedMonth;
-  final String selectedYear;
-  final int selectedDay;
-
-  AddDayAction({
-    required this.selectedDay,
-    required this.selectedMonth,
-    required this.selectedYear,
-  });
-}
+class AddDayAction {}
 
 /// Добавление -1 день
-class RemoveDayAction {
-  final int selectedDay;
-
-  RemoveDayAction({required this.selectedDay});
-}
+class RemoveDayAction {}
 
 /// Сбросить день до настоящего
 class ResetDayAction {}
@@ -48,19 +34,6 @@ class GenerateEndDateAction {
     required this.selectedYear,
   });
 }
-
-// /// Генерация даты окончания обучения
-// class GenerateStartDateAction {
-//   final int selectedDay;
-//   final String selectedMonth;
-//   final String selectedYear;
-
-//   GenerateStartDateAction({
-//     required this.selectedDay,
-//     required this.selectedMonth,
-//     required this.selectedYear,
-//   });
-// }
 
 /// Запись времени обучения
 class InputStudyingTimeAction {
