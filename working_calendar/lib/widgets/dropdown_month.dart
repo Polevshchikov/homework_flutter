@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
+import 'package:working_calendar/locator_service.dart';
+import 'package:working_calendar/models/date_entity.dart';
 import 'package:working_calendar/redux/actions.dart';
 import 'package:working_calendar/redux/app_state.dart';
 import 'package:working_calendar/utils/constant.dart';
@@ -25,8 +27,22 @@ class DropdownMonth extends StatelessWidget {
               )
               .toList(),
           menuMaxHeight: 200,
-          onChanged: (String? newValue) {
+          onChanged: (String? newValue) async {
             store.dispatch(RecordDateMonthAction(newDateMonth: newValue!));
+
+            DateEntity dateEntity = await sl
+                .get<Services>()
+                .dateRepository
+                .getloadJsonDate(vm.rangeStartDate.year);
+
+            store.dispatch(GenerateEndDateAction(
+              dateEntity: dateEntity,
+              isSwitchedOn: vm.isSwitchedOn,
+              studyingTime: vm.studyingTime,
+              selectedDay: vm.rangeStartDate.day,
+              selectedMonth: listMonths[vm.rangeStartDate.month - 1],
+              selectedYear: vm.rangeStartDate.year.toString(),
+            ));
           }),
     );
   }

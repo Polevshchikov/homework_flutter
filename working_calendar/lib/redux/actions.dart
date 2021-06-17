@@ -9,6 +9,27 @@ class RemoveDayAction {}
 /// Сбросить день до настоящего
 class ResetDayAction {}
 
+/// Запись нового года
+class RecordDateYearAction {
+  final int newDateYear;
+
+  RecordDateYearAction({required this.newDateYear});
+}
+
+/// Запись нового месяца
+class RecordDateMonthAction {
+  final String newDateMonth;
+
+  RecordDateMonthAction({required this.newDateMonth});
+}
+
+/// Установить дату окончания по клику на календарь
+class SelectedNewDate {
+  final DateTime newDateTime;
+
+  SelectedNewDate({required this.newDateTime});
+}
+
 /// Переключение 4 - 6 часов
 class SwitchToggleAction {
   final bool isSwitchedOn;
@@ -41,23 +62,3 @@ class InputStudyingTimeAction {
 
   InputStudyingTimeAction({required this.studyingTime});
 }
-
-/// Запись нового года
-class RecordDateYearAction {
-  final int newDateYear;
-
-  RecordDateYearAction({required this.newDateYear});
-}
-
-/// Сбросить год до настоящего
-class ResetDateYearAction {}
-
-/// Запись нового месяца
-class RecordDateMonthAction {
-  final String newDateMonth;
-
-  RecordDateMonthAction({required this.newDateMonth});
-}
-
-/// Сбросить месяц до настоящего
-class ResetDateMonthAction {}

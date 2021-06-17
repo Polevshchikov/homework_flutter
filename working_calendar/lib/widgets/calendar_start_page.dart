@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
 import 'package:table_calendar/table_calendar.dart';
+import 'package:working_calendar/locator_service.dart';
+import 'package:working_calendar/models/date_entity.dart';
+import 'package:working_calendar/redux/actions.dart';
 import 'package:working_calendar/redux/app_state.dart';
+import 'package:working_calendar/utils/constant.dart';
 import 'package:working_calendar/utils/utils.dart';
 
 class CalendarStartPage extends StatelessWidget {
@@ -11,41 +15,58 @@ class CalendarStartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Store<AppState> store = StoreProvider.of<AppState>(context);
-    return Card(
-      elevation: 5,
-      child: StoreConnector<AppState, AppState>(
-        converter: (store) => store.state,
-        builder: (context, vm) => TableCalendar(
-          startingDayOfWeek: StartingDayOfWeek.monday,
-          locale: 'ru_RU',
-          firstDay: kFirstDay,
-          lastDay: kLastDay,
-          focusedDay: vm.rangeEndDate,
-          selectedDayPredicate: (day) => isSameDay(
-              vm.rangeStartDate, day), //TODO: возможно внести еще селекторДей
-          rangeStartDay: vm.rangeEndDate,
-          rangeEndDay: vm.rangeStartDate,
-          onDaySelected: (selectedDay, focusedDay) {
-            // setState(() {
-            //   _selectedDay = selectedDay;
-            //   _focusedDay = focusedDay;
-            //   _rangeStart =
-            //       _selectedDay.subtract(Duration(days: calcDay.ceil()));
-            //   _rangeEnd = _selectedDay;
-            // });
-          },
-          // onRangeSelected: (start, end, focusedDay) {
-          //   setState(() {
-          //     _selectedDay = null;
-          //     _focusedDay = focusedDay;
-          //     _rangeStart = start;
-          //     _rangeEnd = end;
-          //     _rangeSelectionMode = RangeSelectionMode.toggledOn;
-          //   });
-          // },
-          // onPageChanged: (focusedDay) {
-          //   _focusedDay = focusedDay;
-          // },
+    return Container(
+      width: MediaQuery.of(context).size.width * 0.95,
+      child: Card(
+        elevation: 5,
+        child: StoreConnector<AppState, AppState>(
+          converter: (store) => store.state,
+          builder: (context, vm) => TableCalendar(
+            headerStyle: HeaderStyle(
+                titleCentered: true, titleTextStyle: TextStyle(fontSize: 20)),
+            availableCalendarFormats: {CalendarFormat.month: 'Month'},
+            daysOfWeekHeight: 60,
+            daysOfWeekStyle: DaysOfWeekStyle(
+              decoration: BoxDecoration(color: Colors.black87),
+              weekendStyle: TextStyle(color: Colors.red, fontSize: 20),
+              weekdayStyle: TextStyle(color: Colors.blue, fontSize: 20),
+            ),
+            calendarStyle: CalendarStyle(
+              rangeHighlightColor: Colors.greenAccent, //!
+              todayTextStyle: TextStyle(color: Colors.black, fontSize: 20),
+              todayDecoration: BoxDecoration(
+                color: Colors.green[100],
+                shape: BoxShape.circle,
+              ),
+              weekendTextStyle:
+                  TextStyle(color: Colors.red, fontWeight: FontWeight.bold),
+            ),
+            startingDayOfWeek: StartingDayOfWeek.monday,
+            locale: 'ru_RU',
+            firstDay: kFirstDay,
+            lastDay: kLastDay,
+            focusedDay: vm.rangeStartDate,
+            selectedDayPredicate: (day) => isSameDay(vm.rangeStartDate, day),
+            rangeStartDay: vm.rangeEndDate,
+            rangeEndDay: vm.rangeStartDate,
+            onDaySelected: (selectedDay, focusedDay) async {
+              DateEntity dateEntity = await sl
+                  .get<Services>()
+                  .dateRepository
+                  .getloadJsonDate(selectedDay.year);
+
+              store.dispatch(SelectedNewDate(newDateTime: selectedDay));
+
+              store.dispatch(GenerateEndDateAction(
+                dateEntity: dateEntity,
+                isSwitchedOn: vm.isSwitchedOn,
+                studyingTime: vm.studyingTime,
+                selectedDay: selectedDay.day,
+                selectedMonth: listMonths[selectedDay.month - 1],
+                selectedYear: selectedDay.year.toString(),
+              ));
+            },
+          ),
         ),
       ),
     );

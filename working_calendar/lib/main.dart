@@ -19,7 +19,7 @@ void main() async {
         rangeStartDate: DateTime.now(),
         rangeEndDate: DateTime.now(),
         isSwitchedOn: false,
-        studyingTime: 0,
+        studyingTime: 1,
       ));
   initializeDateFormatting().then((_) => runApp(
         StoreProvider(

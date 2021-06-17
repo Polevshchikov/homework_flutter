@@ -53,12 +53,23 @@ DateTime _endDateReducer(DateTime date, GenerateEndDateAction action) {
   DateTime _getItemListMonth() {
     for (var item = 0; item < listMonths.length; item++) {
       if (listMonths[item] == action.selectedMonth) {
-        if (item < 10) {
-          return DateTime.parse(
-              '${action.selectedYear}-0${++item}-${action.selectedDay}');
+        if (item < 9) {
+          if (action.selectedDay < 10) {
+            return DateTime.parse(
+                '${action.selectedYear}-0${++item}-0${action.selectedDay}');
+          } else {
+            return DateTime.parse(
+                '${action.selectedYear}-0${++item}-${action.selectedDay}');
+          }
+        } else {
+          if (action.selectedDay < 10) {
+            return DateTime.parse(
+                '${action.selectedYear}-${++item}-0${action.selectedDay}');
+          } else {
+            return DateTime.parse(
+                '${action.selectedYear}-${++item}-${action.selectedDay}');
+          }
         }
-        return DateTime.parse(
-            '${action.selectedYear}-${++item}-${action.selectedDay}');
       }
     }
     return DateTime.now();
@@ -102,7 +113,7 @@ DateTime _endDateReducer(DateTime date, GenerateEndDateAction action) {
         i--;
       }
     } else {
-      yearJson = inputDate.year;
+      yearJson = inputDate.year; //TODO
       _loadDate(year: yearJson).then((value) {
         return dateYear = value;
       });
@@ -123,7 +134,11 @@ Reducer<DateTime> _generateStartDateReducer = combineReducers([
   TypedReducer<DateTime, ResetDayAction>(_resetDayReducer),
   TypedReducer<DateTime, RecordDateMonthAction>(_setRecordMonthReducer),
   TypedReducer<DateTime, RecordDateYearAction>(_setRecordYearReducer),
+  TypedReducer<DateTime, SelectedNewDate>(_selectedNewDateReducer),
 ]);
+
+DateTime _selectedNewDateReducer(DateTime date, SelectedNewDate action) =>
+    date = action.newDateTime;
 
 DateTime _addDayReducer(DateTime date, AddDayAction action) =>
     date.add(const Duration(days: 1));
