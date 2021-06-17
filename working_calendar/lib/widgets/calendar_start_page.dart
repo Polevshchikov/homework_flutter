@@ -18,7 +18,7 @@ class CalendarStartPage extends StatelessWidget {
     return Container(
       width: MediaQuery.of(context).size.width * 0.95,
       child: Card(
-        elevation: 5,
+        elevation: 10,
         child: StoreConnector<AppState, AppState>(
           converter: (store) => store.state,
           builder: (context, vm) => TableCalendar(
@@ -32,14 +32,17 @@ class CalendarStartPage extends StatelessWidget {
               weekdayStyle: TextStyle(color: Colors.blue, fontSize: 20),
             ),
             calendarStyle: CalendarStyle(
+              outsideTextStyle: TextStyle(color: Colors.grey, fontSize: 20),
+              defaultTextStyle: TextStyle(color: Colors.black, fontSize: 20),
+
               rangeHighlightColor: Colors.greenAccent, //!
               todayTextStyle: TextStyle(color: Colors.black, fontSize: 20),
               todayDecoration: BoxDecoration(
                 color: Colors.green[100],
                 shape: BoxShape.circle,
               ),
-              weekendTextStyle:
-                  TextStyle(color: Colors.red, fontWeight: FontWeight.bold),
+              weekendTextStyle: TextStyle(
+                  color: Colors.red, fontWeight: FontWeight.w600, fontSize: 20),
             ),
             startingDayOfWeek: StartingDayOfWeek.monday,
             locale: 'ru_RU',

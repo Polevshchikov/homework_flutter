@@ -14,26 +14,73 @@ class StartPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Calendar'),
+        // backgroundColor: Colors.blue[100],
         centerTitle: true,
       ),
-      body: SingleChildScrollView(
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const SizedBox(height: 20),
-              InputDate(),
-              const SizedBox(height: 10),
-              InputStudyingTime(),
-              ActionButton(),
-              SwitchButton(),
-              CalendarStartPage(),
-              const SizedBox(height: 20),
-              TextPage(),
-              const SizedBox(height: 50),
-            ],
+      body: Stack(
+        children: [
+          Image.asset(
+            'assets/images/date.jpeg',
+            fit: BoxFit.cover,
+            height: double.infinity,
+            width: double.infinity,
+            alignment: Alignment.center,
           ),
-        ),
+          SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                MediaQuery.of(context).size.width < 450
+                    ? Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                            margin: EdgeInsets.only(top: 20),
+                            child: Column(
+                              children: [
+                                InputDate(),
+                                const SizedBox(height: 10),
+                                InputStudyingTime(),
+                              ],
+                            ),
+                          ),
+                          Column(
+                            children: [
+                              ActionButton(),
+                              SwitchButton(),
+                            ],
+                          ),
+                        ],
+                      )
+                    : Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                            margin: EdgeInsets.all(20),
+                            child: Column(
+                              children: [
+                                InputDate(),
+                                const SizedBox(height: 10),
+                                InputStudyingTime(),
+                              ],
+                            ),
+                          ),
+                          Column(
+                            children: [
+                              ActionButton(),
+                              SwitchButton(),
+                            ],
+                          ),
+                        ],
+                      ),
+                CalendarStartPage(),
+                const SizedBox(height: 20),
+                TextPage(),
+                const SizedBox(height: 50),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }

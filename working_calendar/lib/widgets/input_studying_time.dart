@@ -11,9 +11,17 @@ class InputStudyingTime extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Store<AppState> store = StoreProvider.of<AppState>(context);
-    return SizedBox(
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(25.0),
+        color: Color.fromRGBO(253, 255, 255, 1),
+        boxShadow: [
+          BoxShadow(color: Colors.black, spreadRadius: 3, blurRadius: 5),
+        ],
+      ),
       width: 300,
       child: TextField(
+        style: TextStyle(fontSize: 20),
         keyboardType: TextInputType.number,
         inputFormatters: [
           FilteringTextInputFormatter.allow(RegExp('[0-9]+')),
@@ -27,18 +35,20 @@ class InputStudyingTime extends StatelessWidget {
           }
         },
         decoration: InputDecoration(
-          labelText: 'Введите длительность курса (в часах)',
+          hintText: 'Длительность курса',
+          hintStyle: TextStyle(color: Colors.black),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(25.0),
             borderSide: BorderSide(
-              color: Colors.blue,
+              color: Colors.blueAccent,
               width: 2.0,
             ),
           ),
           enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(25.0),
             borderSide: BorderSide(
-              color: Colors.green,
-              width: 2.0,
+              color: Colors.blue,
+              width: 1.0,
             ),
           ),
         ),

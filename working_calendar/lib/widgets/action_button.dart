@@ -39,6 +39,14 @@ class ActionButton extends StatelessWidget {
                   },
                   child: Text('click')),
             ),
+            Container(
+              width: 100,
+              child: TextButton(
+                  onPressed: () {
+                    store.dispatch(ResetDayAction());
+                  },
+                  child: Text('reset')),
+            ),
           ],
         ),
       ),

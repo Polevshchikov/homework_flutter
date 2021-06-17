@@ -16,6 +16,8 @@ class DropdownMonth extends StatelessWidget {
     return StoreConnector<AppState, AppState>(
       converter: (store) => store.state,
       builder: (context, vm) => DropdownButton(
+          style: TextStyle(fontSize: 20, color: Colors.black),
+          iconSize: 40,
           dropdownColor: Color(0xFF2accFa),
           value: listMonths[vm.rangeStartDate.month - 1],
           items: listMonths
@@ -28,20 +30,29 @@ class DropdownMonth extends StatelessWidget {
               .toList(),
           menuMaxHeight: 200,
           onChanged: (String? newValue) async {
+            int selectedIntMonth = 1;
+            for (var item = 0; item < listMonths.length; item++) {
+              if ('${listMonths[item]}' == newValue) {
+                selectedIntMonth = ++item;
+              }
+            }
+            DateTime newDate = DateTime.utc(vm.rangeStartDate.year,
+                selectedIntMonth, vm.rangeStartDate.day);
+
             store.dispatch(RecordDateMonthAction(newDateMonth: newValue!));
 
             DateEntity dateEntity = await sl
                 .get<Services>()
                 .dateRepository
-                .getloadJsonDate(vm.rangeStartDate.year);
+                .getloadJsonDate(newDate.year);
 
             store.dispatch(GenerateEndDateAction(
               dateEntity: dateEntity,
               isSwitchedOn: vm.isSwitchedOn,
               studyingTime: vm.studyingTime,
-              selectedDay: vm.rangeStartDate.day,
-              selectedMonth: listMonths[vm.rangeStartDate.month - 1],
-              selectedYear: vm.rangeStartDate.year.toString(),
+              selectedDay: newDate.day,
+              selectedMonth: listMonths[newDate.month - 1],
+              selectedYear: newDate.year.toString(),
             ));
           }),
     );

@@ -17,11 +17,11 @@ class InputDate extends StatelessWidget {
     Store<AppState> store = StoreProvider.of<AppState>(context);
     return Container(
       decoration: BoxDecoration(
-        border: Border.all(
-          width: 2,
-          color: Colors.green,
-          style: BorderStyle.solid,
-        ),
+        borderRadius: BorderRadius.circular(5),
+        color: Color.fromRGBO(210, 230, 250, 1),
+        boxShadow: [
+          BoxShadow(color: Colors.black, spreadRadius: 3, blurRadius: 5),
+        ],
       ),
       child: StoreConnector<AppState, AppState>(
         converter: (store) => store.state,
@@ -40,7 +40,7 @@ class InputDate extends StatelessWidget {
                       alignment: Alignment.centerRight,
                       child: Text(
                         '${vm.rangeStartDate.day}',
-                        style: TextStyle(fontSize: 18),
+                        style: TextStyle(fontSize: 20),
                       ),
                     ),
                   ),
@@ -48,7 +48,10 @@ class InputDate extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       GestureDetector(
-                          child: Icon(Icons.arrow_drop_up),
+                          child: Icon(
+                            Icons.arrow_drop_up,
+                            size: 40,
+                          ),
                           onTap: () async {
                             DateTime addVariable =
                                 vm.rangeStartDate.add(Duration(days: 1));
@@ -69,7 +72,10 @@ class InputDate extends StatelessWidget {
                             store.dispatch(AddDayAction());
                           }),
                       GestureDetector(
-                          child: Icon(Icons.arrow_drop_down),
+                          child: Icon(
+                            Icons.arrow_drop_down,
+                            size: 40,
+                          ),
                           onTap: () async {
                             DateTime subVariable =
                                 vm.rangeStartDate.subtract(Duration(days: 1));
