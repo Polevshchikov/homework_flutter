@@ -37,6 +37,7 @@ bool _switchedOnOffReducer(bool switchedValue, SwitchToggleAction action) =>
 /// Генерация начальной даты
 Reducer<DateTime> _generateDateReducer = combineReducers([
   TypedReducer<DateTime, GenerateEndDateAction>(_endDateReducer),
+  TypedReducer<DateTime, ResetDayAction>(_resetDayReducer),
 ]);
 
 DateTime _endDateReducer(DateTime date, GenerateEndDateAction action) {
@@ -113,7 +114,7 @@ DateTime _endDateReducer(DateTime date, GenerateEndDateAction action) {
         i--;
       }
     } else {
-      yearJson = inputDate.year; //TODO
+      yearJson = inputDate.year;
       _loadDate(year: yearJson).then((value) {
         return dateYear = value;
       });
@@ -191,7 +192,7 @@ DateTime _setRecordMonthReducer(DateTime date, RecordDateMonthAction action) {
       }
     }
   }
-  return DateTime(date.year, selectedIntMonth, date.day);
+  return DateTime(date.year, selectedIntMonth, count);
 }
 
 /// Запись нового года

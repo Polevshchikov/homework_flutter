@@ -3,6 +3,7 @@ import 'package:working_calendar/widgets/action_button.dart';
 import 'package:working_calendar/widgets/calendar_start_page.dart';
 import 'package:working_calendar/widgets/input_date.dart';
 import 'package:working_calendar/widgets/input_studying_time.dart';
+import 'package:working_calendar/widgets/memo_text.dart';
 import 'package:working_calendar/widgets/switch_button.dart';
 import 'package:working_calendar/widgets/text_page.dart';
 
@@ -12,10 +13,31 @@ class StartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Calendar'),
-        // backgroundColor: Colors.blue[100],
-        centerTitle: true,
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(kToolbarHeight),
+        child: AppBar(
+          flexibleSpace: Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  colors: [
+                    const Color.fromRGBO(0, 50, 205, 0.7),
+                    const Color.fromRGBO(150, 10, 10, 0.8),
+                  ],
+                  begin: const FractionalOffset(0.0, 0.0),
+                  end: const FractionalOffset(1.0, 0.0),
+                  stops: [0.0, 1.0],
+                  tileMode: TileMode.clamp),
+            ),
+          ),
+          title: const Text(
+            'Калькулятор дней',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 25,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+        ),
       ),
       body: Stack(
         children: [
@@ -30,7 +52,7 @@ class StartPage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                MediaQuery.of(context).size.width < 450
+                MediaQuery.of(context).size.width < 650
                     ? Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -44,11 +66,14 @@ class StartPage extends StatelessWidget {
                               ],
                             ),
                           ),
-                          Column(
-                            children: [
-                              ActionButton(),
-                              SwitchButton(),
-                            ],
+                          Padding(
+                            padding: const EdgeInsets.only(top: 10),
+                            child: Column(
+                              children: [
+                                ActionButton(),
+                                SwitchButton(),
+                              ],
+                            ),
                           ),
                         ],
                       )
@@ -75,8 +100,25 @@ class StartPage extends StatelessWidget {
                       ),
                 CalendarStartPage(),
                 const SizedBox(height: 20),
-                TextPage(),
-                const SizedBox(height: 50),
+                MediaQuery.of(context).size.width < 650
+                    ? Column(
+                        children: [
+                          TextPage(),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 20),
+                            child: MemoText(),
+                          ),
+                        ],
+                      )
+                    : Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          MemoText(),
+                          TextPage(),
+                        ],
+                      ),
+                const SizedBox(height: 20),
               ],
             ),
           ),

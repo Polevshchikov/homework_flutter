@@ -20,7 +20,18 @@ class ActionButton extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
+              height: 60,
               width: 100,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(25.0),
+                    bottomLeft: Radius.circular(10.0)),
+                boxShadow: [
+                  BoxShadow(
+                      color: Colors.green, spreadRadius: 3, blurRadius: 8),
+                ],
+                color: Colors.white60,
+              ),
               child: TextButton(
                   onPressed: () async {
                     DateEntity dateEntity = await sl
@@ -37,15 +48,40 @@ class ActionButton extends StatelessWidget {
                       selectedYear: vm.rangeStartDate.year.toString(),
                     ));
                   },
-                  child: Text('click')),
+                  child: Text(
+                    'Рассчитать',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 16,
+                    ),
+                  )),
+            ),
+            SizedBox(
+              width: 6,
             ),
             Container(
+              height: 60,
               width: 100,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(25.0),
+                    bottomRight: Radius.circular(10.0)),
+                boxShadow: [
+                  BoxShadow(color: Colors.red, spreadRadius: 2, blurRadius: 8),
+                ],
+                color: Colors.white60,
+              ),
               child: TextButton(
                   onPressed: () {
                     store.dispatch(ResetDayAction());
                   },
-                  child: Text('reset')),
+                  child: Text(
+                    'Сбросить',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 16,
+                    ),
+                  )),
             ),
           ],
         ),
