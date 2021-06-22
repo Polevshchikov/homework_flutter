@@ -21,7 +21,7 @@ class ActionButton extends StatelessWidget {
           children: [
             Container(
               height: 60,
-              width: 100,
+              width: 110,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(25.0),
@@ -61,7 +61,7 @@ class ActionButton extends StatelessWidget {
             ),
             Container(
               height: 60,
-              width: 100,
+              width: 110,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(
                     topRight: Radius.circular(25.0),

@@ -62,3 +62,8 @@ class InputStudyingTimeAction {
 
   InputStudyingTimeAction({required this.studyingTime});
 }
+
+/// Предупреждающий баннер
+class WarningBannerOffAction {}
+
+class WarningBannerOnAction {}

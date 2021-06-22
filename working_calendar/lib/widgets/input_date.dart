@@ -53,23 +53,28 @@ class InputDate extends StatelessWidget {
                             size: 40,
                           ),
                           onTap: () async {
-                            DateTime addVariable =
-                                vm.rangeStartDate.add(Duration(days: 1));
+                            if (vm.rangeStartDate.year <= 2023 &&
+                                vm.rangeStartDate.month <= 12 &&
+                                vm.rangeStartDate.day < 31) {
+                              DateTime addVariable =
+                                  vm.rangeStartDate.add(Duration(days: 1));
 
-                            DateEntity dateEntity = await sl
-                                .get<Services>()
-                                .dateRepository
-                                .getloadJsonDate(addVariable.year);
+                              DateEntity dateEntity = await sl
+                                  .get<Services>()
+                                  .dateRepository
+                                  .getloadJsonDate(addVariable.year);
 
-                            store.dispatch(GenerateEndDateAction(
-                              dateEntity: dateEntity,
-                              isSwitchedOn: vm.isSwitchedOn,
-                              studyingTime: vm.studyingTime,
-                              selectedDay: addVariable.day,
-                              selectedMonth: listMonths[addVariable.month - 1],
-                              selectedYear: addVariable.year.toString(),
-                            ));
-                            store.dispatch(AddDayAction());
+                              store.dispatch(GenerateEndDateAction(
+                                dateEntity: dateEntity,
+                                isSwitchedOn: vm.isSwitchedOn,
+                                studyingTime: vm.studyingTime,
+                                selectedDay: addVariable.day,
+                                selectedMonth:
+                                    listMonths[addVariable.month - 1],
+                                selectedYear: addVariable.year.toString(),
+                              ));
+                              store.dispatch(AddDayAction());
+                            }
                           }),
                       GestureDetector(
                           child: Icon(
@@ -77,23 +82,28 @@ class InputDate extends StatelessWidget {
                             size: 40,
                           ),
                           onTap: () async {
-                            DateTime subVariable =
-                                vm.rangeStartDate.subtract(Duration(days: 1));
+                            if (vm.rangeStartDate.year >= 2015 &&
+                                vm.rangeStartDate.month >= 1 &&
+                                vm.rangeStartDate.day > 1) {
+                              DateTime subVariable =
+                                  vm.rangeStartDate.subtract(Duration(days: 1));
 
-                            DateEntity dateEntity = await sl
-                                .get<Services>()
-                                .dateRepository
-                                .getloadJsonDate(subVariable.year);
+                              DateEntity dateEntity = await sl
+                                  .get<Services>()
+                                  .dateRepository
+                                  .getloadJsonDate(subVariable.year);
 
-                            store.dispatch(GenerateEndDateAction(
-                              dateEntity: dateEntity,
-                              isSwitchedOn: vm.isSwitchedOn,
-                              studyingTime: vm.studyingTime,
-                              selectedDay: subVariable.day,
-                              selectedMonth: listMonths[subVariable.month - 1],
-                              selectedYear: subVariable.year.toString(),
-                            ));
-                            store.dispatch(RemoveDayAction());
+                              store.dispatch(GenerateEndDateAction(
+                                dateEntity: dateEntity,
+                                isSwitchedOn: vm.isSwitchedOn,
+                                studyingTime: vm.studyingTime,
+                                selectedDay: subVariable.day,
+                                selectedMonth:
+                                    listMonths[subVariable.month - 1],
+                                selectedYear: subVariable.year.toString(),
+                              ));
+                              store.dispatch(RemoveDayAction());
+                            }
                           }),
                     ],
                   ),

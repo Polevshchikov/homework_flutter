@@ -45,4 +45,4 @@ List<DateTime> daysInRange(DateTime first, DateTime last) {
 
 final kNow = DateTime.now();
 final kFirstDay = DateTime(2015, 01, 01);
-final kLastDay = DateTime(kNow.year + 1, kNow.month, kNow.day);
+final kLastDay = DateTime(2023, 12, 31);

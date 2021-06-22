@@ -11,6 +11,7 @@ AppState appReducers(AppState state, dynamic action) => AppState(
       rangeStartDate: _generateStartDateReducer(state.rangeStartDate, action),
       isSwitchedOn: _switchedReducer(state.isSwitchedOn, action),
       studyingTime: _studyingTimeReducer(state.studyingTime, action),
+      warningBannerOn: _warningBannerOnOff(state.warningBannerOn, action),
     );
 
 //=================
@@ -23,6 +24,17 @@ int _setStudyingTimeReducer(int studyingTime, InputStudyingTimeAction action) =>
     studyingTime = action.studyingTime;
 
 //=================
+
+/// Переключения предупреждающего баннера
+Reducer<bool> _warningBannerOnOff = combineReducers([
+  TypedReducer<bool, WarningBannerOffAction>(_warningBannerOff),
+  TypedReducer<bool, WarningBannerOnAction>(_warningBannerOn),
+]);
+
+bool _warningBannerOff(bool toggleClick, WarningBannerOffAction action) =>
+    toggleClick = false;
+bool _warningBannerOn(bool toggleClick, WarningBannerOnAction action) =>
+    toggleClick = true;
 
 /// Переключения ползунка 4/6 часов
 Reducer<bool> _switchedReducer = combineReducers([

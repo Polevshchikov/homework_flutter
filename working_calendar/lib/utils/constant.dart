@@ -22,7 +22,6 @@ const List<int> listYears = [
   2021,
   2022,
   2023,
-  2024
 ];
 
 final List<String> listYearsAsString =

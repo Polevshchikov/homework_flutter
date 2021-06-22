@@ -5,8 +5,10 @@ final sl = GetIt.instance;
 
 class Services {
   late DateRepository dateRepository;
+  late DateTime dateTime;
 
   void init() {
     dateRepository = DateRepository();
+    dateTime = DateTime.now();
   }
 }

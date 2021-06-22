@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:working_calendar/locator_service.dart';
 import 'package:working_calendar/widgets/action_button.dart';
 import 'package:working_calendar/widgets/calendar_start_page.dart';
 import 'package:working_calendar/widgets/input_date.dart';
 import 'package:working_calendar/widgets/input_studying_time.dart';
 import 'package:working_calendar/widgets/memo_text.dart';
+import 'package:working_calendar/widgets/warning_banner.dart';
 import 'package:working_calendar/widgets/switch_button.dart';
 import 'package:working_calendar/widgets/text_page.dart';
 
@@ -48,82 +50,107 @@ class StartPage extends StatelessWidget {
             width: double.infinity,
             alignment: Alignment.center,
           ),
-          SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                MediaQuery.of(context).size.width < 650
-                    ? Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Container(
-                            margin: EdgeInsets.only(top: 20),
-                            child: Column(
+          trialPeriod()
+              ? SingleChildScrollView(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      MediaQuery.of(context).size.width < 650
+                          ? Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                InputDate(),
-                                const SizedBox(height: 10),
-                                InputStudyingTime(),
+                                Container(
+                                  margin: EdgeInsets.only(top: 20),
+                                  child: Column(
+                                    children: [
+                                      InputDate(),
+                                      const SizedBox(height: 10),
+                                      InputStudyingTime(),
+                                    ],
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(top: 10),
+                                  child: Column(
+                                    children: [
+                                      ActionButton(),
+                                      SwitchButton(),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            )
+                          : Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Container(
+                                  margin: EdgeInsets.all(20),
+                                  child: Column(
+                                    children: [
+                                      InputDate(),
+                                      const SizedBox(height: 10),
+                                      InputStudyingTime(),
+                                    ],
+                                  ),
+                                ),
+                                Column(
+                                  children: [
+                                    ActionButton(),
+                                    SwitchButton(),
+                                  ],
+                                ),
                               ],
                             ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 10),
-                            child: Column(
+                      CalendarStartPage(),
+                      const SizedBox(height: 20),
+                      MediaQuery.of(context).size.width < 650
+                          ? Column(
                               children: [
-                                ActionButton(),
-                                SwitchButton(),
+                                TextPage(),
+                                Padding(
+                                  padding: const EdgeInsets.only(top: 20),
+                                  child: MemoText(),
+                                ),
+                              ],
+                            )
+                          : Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                MemoText(),
+                                TextPage(),
                               ],
                             ),
-                          ),
-                        ],
-                      )
-                    : Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Container(
-                            margin: EdgeInsets.all(20),
-                            child: Column(
-                              children: [
-                                InputDate(),
-                                const SizedBox(height: 10),
-                                InputStudyingTime(),
-                              ],
-                            ),
-                          ),
-                          Column(
-                            children: [
-                              ActionButton(),
-                              SwitchButton(),
-                            ],
-                          ),
-                        ],
-                      ),
-                CalendarStartPage(),
-                const SizedBox(height: 20),
-                MediaQuery.of(context).size.width < 650
-                    ? Column(
-                        children: [
-                          TextPage(),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 20),
-                            child: MemoText(),
-                          ),
-                        ],
-                      )
-                    : Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          MemoText(),
-                          TextPage(),
-                        ],
-                      ),
-                const SizedBox(height: 20),
-              ],
-            ),
-          ),
+                      const SizedBox(height: 20),
+                    ],
+                  ),
+                )
+              : Center(
+                  child: Container(
+                    color: Colors.red,
+                    width: double.infinity,
+                    height: 200,
+                    child: Center(
+                        child: Text(
+                      'Пробный период окончен!',
+                      style: TextStyle(color: Colors.white, fontSize: 25),
+                    )),
+                  ),
+                ),
+          WarningBanner(),
         ],
       ),
     );
   }
+}
+
+bool trialPeriod() {
+  DateTime treal = sl.get<Services>().dateTime;
+  // if ((treal.year == 2021 && treal.day >= 25 && treal.month >= 6) ||
+  //     (treal.year <= 2021 && treal.day <= 17 && treal.month <= 6)) {
+  //   return false;
+  // } else {
+  //   return true;
+  // }
+  return true;
 }
