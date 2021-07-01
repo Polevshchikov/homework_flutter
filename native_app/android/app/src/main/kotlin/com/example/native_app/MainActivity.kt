@@ -78,7 +78,7 @@ class MainActivity: FlutterActivity() {
                                     PackageManager.PERMISSION_GRANTED)) {
                     }
                 } else {
-                    
+
                 }
                 return
             }
@@ -103,11 +103,11 @@ class MainActivity: FlutterActivity() {
                     locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, call.arguments(), listener)
 
                 }
-                result.success("Выполнено")
+                result.success("Выполнено startLocation")
             } else if (call.method == "stopLocationService")
             {
                 locationManager.removeUpdates(listener)
-                result.success("Выполнено")
+                result.success("Выполнено stopLocation")
             } else {
                 result.notImplemented()
             }
