@@ -13,11 +13,41 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
-  final TextEditingController _controller = TextEditingController();
+class _HomePageState extends State<HomePage>
+    with SingleTickerProviderStateMixin {
+  final TextEditingController _controllerText = TextEditingController();
   List<num> data = [];
   List<Color> colorList = [];
-  num dataValue = 0;
+  num? dataValue;
+  late Animation<double> animation;
+  late AnimationController controller;
+  double _animFraction = 0.0;
+  bool startAnimation = false;
+
+  @override
+  void initState() {
+    super.initState();
+    controller = AnimationController(
+      duration: Duration(milliseconds: 1300),
+      vsync: this,
+    );
+
+    controller.forward();
+    animation = Tween<double>(begin: 0, end: 1)
+        .animate(CurvedAnimation(parent: controller, curve: Curves.bounceOut))
+          ..addListener(() {
+            setState(() {
+              _animFraction = animation.value;
+            });
+          });
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,7 +67,7 @@ class _HomePageState extends State<HomePage> {
                     decoration: InputDecoration(
                       hintText: 'Ввод числа',
                     ),
-                    controller: _controller,
+                    controller: _controllerText,
                     keyboardType: TextInputType.number,
                     inputFormatters: [
                       FilteringTextInputFormatter.allow(RegExp('[0-9]+')),
@@ -53,15 +83,20 @@ class _HomePageState extends State<HomePage> {
                 ),
                 ElevatedButton(
                     onPressed: () {
-                      setState(() {
-                        data.add(dataValue);
-                        colorList.add(Color(
-                                (math.Random().nextDouble() * 0xFFFFFFFFF)
-                                    .toInt())
-                            .withOpacity(1.0));
-                        _controller.clear();
-                        dataValue = 0;
-                      });
+                      if (dataValue != null) {
+                        setState(() {
+                          data.add(dataValue!);
+                          colorList.add(Color(
+                                  (math.Random().nextDouble() * 0xFFFFFFFFF)
+                                      .toInt())
+                              .withOpacity(1.0));
+                          _controllerText.clear();
+                          dataValue = null;
+                          startAnimation = true;
+                        });
+                      }
+                      controller.reset();
+                      controller.forward();
                     },
                     child: Text('Добавить')),
               ],
@@ -76,13 +111,21 @@ class _HomePageState extends State<HomePage> {
             SizedBox(
               height: 30,
             ),
-            SizedBox(
-              width: 200,
-              height: 200,
-              child: CustomPaint(
-                painter: CirclePainter(numList: data, colorList: colorList),
-              ),
-            ),
+            AnimatedBuilder(
+                animation: animation,
+                builder: (context, child) {
+                  return Transform.scale(
+                    scale: _animFraction,
+                    child: SizedBox(
+                      width: 200,
+                      height: 200,
+                      child: CustomPaint(
+                        painter:
+                            CirclePainter(numList: data, colorList: colorList),
+                      ),
+                    ),
+                  );
+                }),
           ],
         ),
       ),
